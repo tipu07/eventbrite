@@ -6,10 +6,10 @@
 
 .logo {
 	position: relative;
-	@include flex(center);
+	@include flex(center, center);
 	width: 100%;
 	max-width: 8rem;
-	height: 6rem;
+	height: 8rem;
 	> a {
 		display: block;
 		width: 100%;
@@ -23,17 +23,10 @@
 		}
 	}
 	header & {
-		float: left;
-		max-width: 17rem;
-		height: 10rem;
-		margin: 4rem 0 2rem;
+		@include pos;
+		margin: 2rem auto;
 		-webkit-transition: var(--transition);
 		transition: var(--transition);
-		@include ipad_sm {
-			max-width: 12rem;
-			height: 7rem;
-			margin: 3rem 0 2rem;
-		}
 	}
 	footer & {
 		max-width: 25rem;
@@ -55,23 +48,60 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 16rem;
-	border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.5);
+	height: 12rem;
+	background: var(--black);
+	-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(var(--black_rgb), 0.35);
+	box-shadow: 0 0.5rem 1rem 0 rgba(var(--black_rgb), 0.35);
 	-webkit-transition: var(--transition);
 	transition: var(--transition);
 	z-index: 30;
-	@include ipad_sm {
-		height: 12rem;
-	}
-	.contain {
-		max-width: 160rem;
+	@at-root {
+		.header_strip {
+			@include flex(center, space-between);
+			height: 4rem;
+			padding: 1rem 0;
+			ul {
+				@include list;
+				@include flex;
+				@include gap(0.5rem 1.5rem);
+				&.social_links {
+					> li {
+						> a {
+							@include flex(center, center);
+							width: 1.6rem;
+							min-width: 1.6rem;
+							height: 1.6rem;
+							-webkit-filter: brightness(0) invert(0.6);
+							filter: brightness(0) invert(0.6);
+							&:hover {
+								-webkit-filter: none;
+								filter: none;
+							}
+							> img {
+								@include object(contain);
+							}
+						}
+					}
+				}
+				&.sm_list {
+					> li {
+						> a {
+							font-size: 1.1rem;
+							color: var(--dark_gray);
+							&:hover {
+								color: var(--prime_color);
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
 #nav {
-	@include flex(center, flex-end);
-	height: 8.5rem;
-	margin-top: 7.5rem;
+	@include flex(center, space-between);
+	height: 8rem;
 	@include ipad {
 		@include pos($pos: fixed);
 		@include flex(center, flex-start, column);
@@ -100,75 +130,23 @@
 	> ul {
 		@include list;
 		@include flex;
+		margin: 0 -2.4rem;
 		> li {
+			padding: 0 2.4rem;
 			> a {
 				position: relative;
 				@include flex(center, center);
 				color: var(--light);
-				white-space: nowrap;
+				font-weight: 600;
 				text-align: center;
+				text-transform: uppercase;
+				white-space: nowrap;
+				&.active {
+					color: var(--prime_color);
+				}
 				&:hover,
 				&:focus {
 					color: var(--prime_color);
-				}
-			}
-		}
-		&#nav {
-			margin: 0 -0.5rem;
-			padding-right: 1.5rem;
-			margin-right: 3rem;
-			border-right: 0.1rem solid rgba(var(--light_rgb), 0.5);
-			@include ipad {
-				@include flex(center, center, column);
-				width: 100%;
-				padding: 0 0 1.5rem;
-				margin: 0 -0.5rem 3rem;
-				border: 0;
-				border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.5);
-			}
-			> li {
-				padding: 0 0.5rem;
-				> a {
-					height: 8.5rem;
-					font-size: 2rem;
-					font-family: var(--font-roboto-condensed);
-					padding: 0 2.5rem;
-					text-transform: uppercase;
-					@include ipad {
-						height: 5.6rem;
-						font-size: 1.6rem;
-					}
-					&::after {
-						content: "";
-						@include pos($t: null);
-						height: 0.3rem;
-						background: var(--prime_color);
-						opacity: 0;
-						-webkit-transition: var(--transition);
-						transition: var(--transition);
-					}
-				}
-				&.active {
-					> a {
-						&::after {
-							opacity: 1;
-						}
-					}
-				}
-			}
-		}
-		&#cta {
-			margin: 0 -1.4rem;
-			> li {
-				padding: 0 1.4rem;
-				> a {
-					width: 2.4rem;
-					min-width: 2.4rem;
-					height: 2.4rem;
-					padding: 0;
-					> img {
-						@include object(contain);
-					}
 				}
 			}
 		}
@@ -183,16 +161,11 @@
 
 #banner {
 	@include bg(cover);
-	// padding: 47rem 0 50rem;
-	border-bottom: 1rem solid var(--prime_color);
 	&::before {
-		// content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: #565861;
+		content: "";
+		@include pos;
+		background: var(--black);
+		opacity: 0.6;
 		mix-blend-mode: multiply;
 		z-index: 1;
 	}
@@ -202,55 +175,24 @@
 	}
 	.outer {
 		@include flex(center);
-		min-height: 129rem;
-		padding: 27rem 0 30rem;
-		@include ipad {
-			min-height: 100rem;
-			padding: 27rem 0 30rem;
-		}
-		@include mobile {
-			min-height: 70rem;
-			padding: 20rem 0 23rem;
-		}
+		min-height: 50rem;
+		padding: 8rem 0;
 		.content {
-			max-width: 90rem;
-			padding: 2rem 0;
+			max-width: 74rem;
+			text-align: center;
+			margin: auto;
 			h1 {
-				color: var(--prime_color);
-				font-size: 15rem;
-				line-height: 11rem;
-				text-transform: capitalize;
-				@include ipad {
-					font-size: 10rem;
-					line-height: 8rem;
-				}
-				@include ipad_sm {
-					font-size: 7.5rem;
-					line-height: 6rem;
-				}
-				@include mobile {
-					font-size: 5.5rem;
-					line-height: 3.6rem;
-				}
+				color: var(--light);
+				font-size: 6rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin: 0 0 2rem;
 			}
 			p {
 				color: var(--light);
-				font-size: 4.8rem;
+				font-size: 2.2rem;
 				font-weight: 200;
-				line-height: 5rem;
-				margin-bottom: 5.6rem;
-				@include ipad {
-					font-size: 3rem;
-					line-height: 4rem;
-				}
-				@include ipad_sm {
-					font-size: 1.8rem;
-					line-height: 2.4rem;
-				}
-				@include mobile {
-					font-size: 1.6rem;
-					margin-bottom: 3rem;
-				}
+				margin-bottom: 2rem;
 			}
 		}
 	}

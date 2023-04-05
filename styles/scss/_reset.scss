@@ -1,6 +1,6 @@
 $colors: (
 	"prime_color": #f05537,
-	"black": #22253b,
+	"black": #1b191d,
 	"dark": #000,
 	"light": #fff,
 	"light_white": #f8f7f4,
@@ -20,11 +20,11 @@ $colors: (
 		--#{$color}_rgb: #{red($value)}, #{green($value)}, #{blue($value)};
 	}
 	// "green": #19cba6,
-	--font-gilda-display: "Gilda Display", sans-serif;
 	--font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
-	--font-roboto-condensed: "Roboto Condensed", sans-serif;
 	--transition: all ease 0.3s;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 /*
 |----------------------------------------------------------------------
@@ -34,6 +34,7 @@ $colors: (
 
 html {
 	min-height: 100%;
+	font-size: 10px;
 	overflow: hidden;
 	overflow-y: initial;
 	&.flow {
@@ -43,12 +44,6 @@ html {
 		}
 	}
 	@at-root {
-		body {
-			font-size: 2rem;
-			@include ipad {
-				font-size: 1.4rem;
-			}
-		}
 		section {
 			overflow: hidden;
 		}
@@ -66,14 +61,15 @@ body {
 	position: relative;
 	@include flex($flow: column);
 	min-height: 100vh;
-	background-color: var(--light);
+	// background-color: var(--light);
+	background-color: var(--black);
 	color: var(--dark);
 	font-size: 1.4rem;
 	font-family: var(--font-plus-jakarta-sans);
 	font-weight: 400;
 	margin: 0;
 	padding: 0;
-	// padding-top: 16rem;
+	padding-top: 12rem;
 	line-height: 1.6;
 	word-break: break-word;
 	-webkit-transition: var(--transition);
@@ -130,8 +126,8 @@ h5,
 .h5,
 h6,
 .h6 {
-	font-family: var(--font-gilda-display);
-	font-weight: 400;
+	font-family: var(--font-plus-jakarta-sans);
+	font-weight: 600;
 	line-height: 1.1;
 	margin: 0 0 1rem;
 	/* &.subheading {
