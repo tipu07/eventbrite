@@ -2,14 +2,13 @@
 // import Image from "next/image"
 
 import Header from "@/components/header"
+import Banner from "./banner"
 
 const Home = () => {
 	return (
 		<>
 			<Header />
-			<section id="banner">
-				<div className="contain">banner</div>
-			</section>
+			<Banner />
 		</>
 	)
 }
