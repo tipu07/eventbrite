@@ -59,6 +59,10 @@
 	}
 }
 
+.subheading {
+	color: var(--prime_color);
+}
+
 .toggle {
 	@include flex(center, center);
 	display: none;
@@ -285,29 +289,148 @@
 	}
 }
 
+.form_blk {
+	position: relative;
+	&:not(:nth-last-child(1)) {
+		margin-bottom: 2rem;
+	}
+	@at-root {
+		.input_form_blk {
+			.form_blk {
+				flex: 1;
+				margin: 0;
+				& + * {
+					@include input_height;
+				}
+			}
+		}
+		.input_form_blk {
+			@include flex;
+		}
+	}
+	&.pass_blk {
+		position: relative;
+		> .input {
+			padding-right: 8rem;
+		}
+		> i {
+			@include pos($l: null, $r: 1.4rem);
+			@include flex(center);
+			width: 1.8rem;
+			height: 100%;
+			color: var(--prime_color);
+			font-style: normal;
+			cursor: pointer;
+			white-space: nowrap;
+			text-decoration: underline;
+			-webkit-transition: var(--transition);
+			transition: var(--transition);
+			&::before {
+				width: 100%;
+				height: 100%;
+			}
+			&.icon-eye {
+				&::before {
+					content: "";
+					@include eye;
+				}
+			}
+			&.icon-eye-slash {
+				&::before {
+					content: "";
+					@include eye_slash;
+				}
+			}
+			&:hover {
+				color: var(--second_color);
+			}
+		}
+	}
+	> i {
+		@include pos($l: 1.6rem, $r: null);
+		width: 1.6rem;
+		height: 1.6rem;
+		font-size: 1.6rem;
+		margin: auto;
+		& + .input {
+			padding-left: 4.2rem;
+		}
+	}
+	> img {
+		@include pos($l: 1.6rem, $r: null);
+		width: 2rem;
+		min-width: 2rem;
+		height: 2rem;
+		margin: auto;
+		-o-object-fit: contain;
+		object-fit: contain;
+		& + .input {
+			padding-left: 5rem;
+		}
+	}
+	> .tip_icon {
+		@include pos($l: null, $r: 2rem);
+		width: 2rem;
+		height: 2rem;
+		margin: auto;
+		pointer-events: none;
+		-o-object-fit: contain;
+		object-fit: contain;
+		& + .input {
+			padding-right: 5rem;
+		}
+	}
+	&.input {
+		@include flex(center);
+		height: auto;
+		padding-top: 0;
+		padding-bottom: 0;
+		> .site_btn {
+			margin-left: 2rem;
+			margin-right: -1.4rem;
+		}
+		> .ico_btn {
+			width: 2.6rem;
+			min-width: 2.6rem;
+			height: 2.6rem;
+			background: transparent;
+			margin-left: 2rem;
+			padding: 0;
+			border: 0;
+		}
+	}
+}
+
+.upload_blk {
+	> button {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	> input[type="file"] {
+		display: none;
+	}
+}
+
 .input {
 	display: block;
 	width: 100%;
 	@include input_height;
-	background: var(--light);
-	color: rgba(var(--black_rgb), 0.5);
+	background: rgba(var(--light_rgb), 0.2);
+	color: rgba(var(--light_rgb), 0.8);
 	font-size: inherit;
 	// font-weight: inherit;
 	font-weight: 400;
 	text-align: left;
 	line-height: inherit;
-	padding: 0.6rem 2.2rem;
-	border: 0.1rem solid var(--gray);
+	padding: 0.6rem 1.6rem;
+	border: 0;
 	border-radius: 0;
 	outline: none !important;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	-webkit-transition: var(--transition);
 	transition: var(--transition);
-	@include mobile {
-		height: 4.4rem;
-		padding: 0.6rem 1.6rem;
-	}
 	> .input {
 		background: transparent;
 		margin: -0.1rem 0;
@@ -332,17 +455,17 @@
 	@at-root {
 		textarea#{&} {
 			height: auto;
-			padding-top: 1.6rem;
+			padding-top: 1rem;
 			resize: none;
 			/* &.long {
 				height: 46rem;
 			} */
 		}
 	}
-	&:valid {
+	/* &:valid {
 		color: var(--prime_color);
 		border-color: var(--prime_color);
-	}
+	} */
 	&:disabled {
 		background: #e3e8ee;
 		cursor: not-allowed;
@@ -353,19 +476,19 @@
 		border-color: var(--prime_color);
 	}
 	&::-webkit-input-placeholder {
-		color: rgba(var(--black_rgb), 0.5);
+		color: rgba(var(--light_rgb), 0.5);
 	}
 	&::-moz-placeholder {
-		color: rgba(var(--black_rgb), 0.5);
+		color: rgba(var(--light_rgb), 0.5);
 	}
 	&:-ms-input-placeholder {
-		color: rgba(var(--black_rgb), 0.5);
+		color: rgba(var(--light_rgb), 0.5);
 	}
 	&::-ms-input-placeholder {
-		color: rgba(var(--black_rgb), 0.5);
+		color: rgba(var(--light_rgb), 0.5);
 	}
 	&::placeholder {
-		color: rgba(var(--black_rgb), 0.5);
+		color: rgba(var(--light_rgb), 0.5);
 	}
 	&:focus {
 		&::-webkit-input-placeholder {
@@ -391,17 +514,13 @@
 	@at-root {
 		select#{&} {
 			@include chevron;
-			background-position: right 2rem center;
-			padding-right: 4rem !important;
+			background-position: right 1.4rem center;
+			padding-right: 3rem !important;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
-			@include mobile {
-				background-size: 1.2rem;
-				background-position: right 1.4rem center;
-			}
 			> option {
-				color: var(--black);
+				color: var(--light);
 			}
 		}
 	}

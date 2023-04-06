@@ -1,11 +1,11 @@
-import { MainSlide } from "@/components/images"
+import { PhotoMainSlide } from "@/components/images"
 import React from "react"
-import style from "@/styles/scss/global.module.scss"
+import style from "@/styles/scss/app.module.scss"
 import Link from "next/link"
 
 const Banner = () => {
 	return (
-		<section id={style.banner} style={{ backgroundImage: `url("${MainSlide.src}")` }}>
+		<section id={style.banner} style={{ backgroundImage: `url("${PhotoMainSlide.src}")` }}>
 			<div className={style.contain}>
 				<div className={style.outer}>
 					<div className={style.content}>
