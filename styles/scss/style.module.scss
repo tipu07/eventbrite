@@ -29,11 +29,8 @@
 		transition: var(--transition);
 	}
 	footer & {
-		max-width: 25rem;
+		max-width: 8rem;
 		height: auto;
-		@include ipad_sm {
-			max-width: 14.6rem;
-		}
 	}
 }
 
@@ -178,7 +175,7 @@
 		min-height: 50rem;
 		padding: 8rem 0;
 		.content {
-			max-width: 74rem;
+			max-width: 76rem;
 			text-align: center;
 			margin: auto;
 			h1 {
@@ -414,6 +411,249 @@
 						min-width: 2rem;
 						height: 2rem;
 					}
+				}
+			}
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Footer
+|----------------------------------------------------------------------
+*/
+
+#footer {
+	background: var(--dark);
+	padding: 6rem 0;
+	margin-top: auto;
+	overflow: hidden;
+	.main_row {
+		> .column1 {
+			width: 25%;
+			@include ipad {
+				width: 100%;
+			}
+		}
+		> .column2,
+		> .column3 {
+			width: 20%;
+			@include ipad {
+				width: 50%;
+			}
+		}
+		> .column4 {
+			width: 30%;
+			@include ipad {
+				width: 50%;
+			}
+			@include mobile {
+				width: 100%;
+			}
+		}
+	}
+	a {
+		color: var(--light_gray);
+		&:hover {
+			color: var(--prime_color);
+		}
+	}
+	.title {
+		font-size: 1.6rem;
+		font-weight: 600;
+		margin-bottom: 1.6rem;
+		text-transform: uppercase;
+	}
+	.list {
+		@include list;
+		> li {
+			&:not(:nth-last-child(1)) {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	form {
+		p {
+			font-size: 1.2rem;
+			line-height: 140%;
+			> a {
+				text-decoration: underline;
+			}
+		}
+		.form_blk {
+			> p {
+				position: relative;
+				@include flex(center);
+				button {
+					@include pos($l: null, $r: 1rem);
+					background: var(--light_gray);
+					margin: auto;
+				}
+			}
+		}
+	}
+	.copyright {
+		@include flex(center, space-between);
+		font-size: 1.2rem;
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 0.1rem solid rgba(var(--light_rgb), 0.2);
+		@include ipad {
+			display: block;
+		}
+		p {
+			margin: 0;
+			@include ipad {
+				margin: 0 0 2rem;
+			}
+		}
+		.terms_list {
+			@include list;
+			@include flex($flow: wrap);
+			margin: -1rem -2rem;
+			@include ipad {
+				margin: -1rem;
+			}
+			> li {
+				padding: 1rem 2rem;
+				@include ipad {
+					padding: 1rem;
+				}
+			}
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Specialities
+|----------------------------------------------------------------------
+*/
+
+#specialities {
+	padding: 8rem 0;
+	@include ipad {
+		padding: 4rem 0;
+	}
+	h2 {
+		margin-bottom: 2.6rem;
+	}
+	.flex_row {
+		> .column1 {
+			width: 40%;
+		}
+		> .column2 {
+			width: 50%;
+		}
+	}
+	.image {
+		mix-blend-mode: difference;
+	}
+	.list {
+		@include list;
+		> li {
+			@include flex;
+			font-size: 1.8rem;
+			padding-bottom: 2rem;
+			border-bottom: 0.1rem solid var(--prime_color);
+			&:not(:nth-last-child(1)) {
+				margin-bottom: 2rem;
+			}
+			> img {
+				@include object(contain);
+				width: 1.6rem;
+				min-width: 1.6rem;
+				height: 1.6rem;
+				margin-top: 0.8rem;
+				margin-right: 2.5rem;
+			}
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Report
+|----------------------------------------------------------------------
+*/
+
+#report {
+	background: var(--dark);
+	padding: 8rem 0;
+	@include ipad_sm {
+		padding: 4rem 0;
+	}
+	.btn_blk {
+		margin-top: 2rem;
+		&_desktop {
+			@include ipad_sm {
+				display: none;
+			}
+		}
+		&_mobile {
+			display: none;
+			@include ipad_sm {
+				@include flex;
+			}
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Get in Touch
+|----------------------------------------------------------------------
+*/
+
+#in_touch {
+	padding: 8rem 0;
+	@include ipad_sm {
+		padding: 4rem 0;
+	}
+	.content {
+		margin-bottom: 4rem;
+		@include ipad_sm {
+			margin-bottom: 3rem;
+		}
+	}
+	.main_row {
+		margin: -1.5rem -4rem;
+		> div {
+			padding: 1.5rem 4rem;
+		}
+	}
+	.form_row {
+		margin: -1rem;
+		> div {
+			padding: 1rem;
+		}
+	}
+	form {
+		.btn_blk {
+			margin-top: 2.6rem;
+		}
+	}
+	@at-root {
+		.contact_info_blk {
+			position: relative;
+			padding-top: 9rem;
+			@include ipad_sm {
+				margin-bottom: 2rem;
+			}
+			.text {
+				position: absolute;
+				top: 0;
+				left: 0;
+				max-width: 39rem;
+				background: var(--prime_color);
+				padding: 2rem;
+				z-index: 1;
+				@include mobile {
+					max-width: 25rem;
+					padding: 2rem;
+				}
+				h5 {
+					text-transform: uppercase;
 				}
 			}
 		}

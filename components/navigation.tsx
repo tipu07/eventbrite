@@ -1,6 +1,6 @@
 import Link from "next/link"
 import React from "react"
-import style from "../styles/scss/global.module.scss"
+import style from "../styles/scss/app.module.scss"
 import { useRouter } from "next/router"
 
 const Navigation = () => {

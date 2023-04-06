@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Link from "next/link"
 import React from "react"
-import style from "@/styles/scss/global.module.scss"
+import style from "@/styles/scss/app.module.scss"
 import Navigation from "./navigation"
 import Image from "next/image"
 import { Logo, SocialFacebook, SocialGoogleStore, SocialInstagram, SocialLinkedin, SocialYelp } from "./images"
