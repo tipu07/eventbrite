@@ -3,15 +3,17 @@ import Banner from "./banner"
 import Footer from "@/components/footer"
 import Contact from "./contact"
 import Report from "./report"
-import Specialities from "./specialities"
+import Categories from "./categories"
+import Matches from "./matches"
 
 const Home = () => {
 	return (
 		<>
 			<Header />
 			<Banner />
-			<Specialities />
+			<Categories />
 			<Report />
+			<Matches />
 			<Contact />
 			<Footer />
 		</>
