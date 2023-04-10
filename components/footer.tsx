@@ -1,8 +1,7 @@
 import React from "react"
 import style from "@/styles/scss/app.module.scss"
-import { Logo } from "./images"
 import Link from "next/link"
-import Image from "next/image"
+import Logo from "./logo"
 
 const Footer = () => {
 	return (
@@ -11,11 +10,7 @@ const Footer = () => {
 				<div className={style.contain}>
 					<div className={style.main_row + " row justify-content-between"}>
 						<div className={style.column1}>
-							<div className={style.logo}>
-								<Link href="/">
-									<Image width={1000} height={1000} src={Logo} alt="" />
-								</Link>
-							</div>
+							<Logo />
 						</div>
 						<div className={style.column2}>
 							<div className={style.title}>Quick Links</div>
@@ -95,10 +90,10 @@ const Footer = () => {
 								<Link href="/privacy-policy">Privacy Policy</Link>
 							</li>
 							<li>
-								<Link href="/terms-of-use">Terms of Use</Link>
+								<Link href="/terms-conditions">Terms & conditions</Link>
 							</li>
 							<li>
-								<Link href="/accessibility-policy">Accessibility Policy</Link>
+								<Link href="/disclaimer">Disclaimer</Link>
 							</li>
 						</ul>
 					</div>

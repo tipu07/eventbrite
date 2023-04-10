@@ -27,6 +27,25 @@ $cross_circle: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www
 |----------------------------------------------------------------------
 */
 
+@mixin font-face($name, $path, $ext, $format, $weight) {
+	$src: null;
+	@font-face {
+		font-family: quote($name);
+		font-style: normal;
+		font-weight: $weight;
+		font-display: swap;
+		src: append($src, url(quote($path + "." + $ext)) format(quote($format)));
+	}
+}
+
+@include font-face("Plus Jakarta Sans", "/fonts/PlusJakartaSans", woff2, "woff", 200);
+@include font-face("Plus Jakarta Sans", "/fonts/PlusJakartaSans", woff2, "woff", 300);
+@include font-face("Plus Jakarta Sans", "/fonts/PlusJakartaSans", woff2, "woff", 400);
+@include font-face("Plus Jakarta Sans", "/fonts/PlusJakartaSans", woff2, "woff", 500);
+@include font-face("Plus Jakarta Sans", "/fonts/PlusJakartaSans", woff2, "woff", 600);
+@include font-face("Plus Jakarta Sans", "/fonts/PlusJakartaSans", woff2, "woff", 700);
+@include font-face("Plus Jakarta Sans", "/fonts/PlusJakartaSans", woff2, "woff", 800);
+
 @mixin flex($align: null, $justify: null, $flow: null, $direction: null) {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -178,6 +197,29 @@ $cross_circle: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www
 @mixin gap($num: null) {
 	gap: $num;
 	grid-gap: $num;
+}
+
+@mixin placeholder($color: null, $opacity: null) {
+	&::-webkit-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&::-moz-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&::-ms-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&::placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
 }
 
 @mixin mask_image {

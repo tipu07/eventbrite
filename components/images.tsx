@@ -1,5 +1,5 @@
 export { default as Favicon } from "/public/images/favicon.ico"
-export { default as Logo } from "/public/images/logo.png"
+export { default as LogoImage } from "/public/images/logo.png"
 
 export { default as SocialYelp } from "/public/images/social-yelp.svg"
 export { default as SocialGoogleStore } from "/public/images/social-google-store.svg"
