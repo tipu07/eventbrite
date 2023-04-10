@@ -60,7 +60,7 @@ const Matches = () => {
 				<div className={style.contain}>
 					<div className={style.content + " text-center"}>
 						<h5 className={style.subheading}>Matches</h5>
-						<h2>Trending Matches</h2>
+						<h2>Trending Tournaments</h2>
 					</div>
 					{MATCH_CARD.map((data) => {
 						return <MatchCard {...data} key={data.id} />

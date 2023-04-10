@@ -475,37 +475,9 @@
 		background: rgba(var(--prime_color_rgb), 0.05);
 		border-color: var(--prime_color);
 	}
-	&::-webkit-input-placeholder {
-		color: rgba(var(--light_rgb), 0.5);
-	}
-	&::-moz-placeholder {
-		color: rgba(var(--light_rgb), 0.5);
-	}
-	&:-ms-input-placeholder {
-		color: rgba(var(--light_rgb), 0.5);
-	}
-	&::-ms-input-placeholder {
-		color: rgba(var(--light_rgb), 0.5);
-	}
-	&::placeholder {
-		color: rgba(var(--light_rgb), 0.5);
-	}
+	@include placeholder(rgba(var(--light_rgb), 0.5));
 	&:focus {
-		&::-webkit-input-placeholder {
-			opacity: 0;
-		}
-		&::-moz-placeholder {
-			opacity: 0;
-		}
-		&:-ms-input-placeholder {
-			opacity: 0;
-		}
-		&::-ms-input-placeholder {
-			opacity: 0;
-		}
-		&::placeholder {
-			opacity: 0;
-		}
+		@include placeholder($opacity: 0);
 	}
 	&:hover,
 	&:focus {

@@ -4,24 +4,22 @@ import React from "react"
 import style from "@/styles/scss/app.module.scss"
 import Navigation from "./navigation"
 import Image from "next/image"
-import { Logo, SocialFacebook, SocialGoogleStore, SocialInstagram, SocialLinkedin, SocialYelp } from "./images"
+import { SocialFacebook, SocialGoogleStore, SocialInstagram, SocialLinkedin, SocialYelp } from "./images"
+import Logo from "./logo"
 
-const Header = () => {
+const Header = (props: any) => {
+	const { pageTitle } = props
 	return (
 		<>
 			<Head>
-				<title>Home — Eventbrite</title>
+				<title>{pageTitle} — Eventbrite</title>
 				<meta name="description" content="Eventbrite" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes" />
 				<link rel="icon" href="/images/favicon.ico" />
 			</Head>
 			<header id={style.header}>
 				<div className={style.contain}>
-					<div className={style.logo}>
-						<Link href="/">
-							<Image width={1000} height={1000} src={Logo} alt="Logo" />
-						</Link>
-					</div>
+					<Logo />
 					<div className={style.header_strip}>
 						<ul className={style.social_links}>
 							<li>

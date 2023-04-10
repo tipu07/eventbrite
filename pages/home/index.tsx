@@ -9,7 +9,7 @@ import Matches from "./matches"
 const Home = () => {
 	return (
 		<>
-			<Header />
+			<Header pageTitle="Home" />
 			<Banner />
 			<Categories />
 			<Report />
