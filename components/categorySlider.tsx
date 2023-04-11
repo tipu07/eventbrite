@@ -74,8 +74,7 @@ const CategorySlider = () => {
 		swipeToSlide: true,
 	}
 	return (
-		// <Slider {...settings} id="" className="slick_category slick_carousel">
-		<Slider {...settings} id="" className={`${style.slick_category} slick-carousel`}>
+		<Slider {...settings} className={`${style.slick_category} slick-carousel`}>
 			{CATEGORIES.map((data) => {
 				return <CategoryCard {...data} key={data.id} />
 			})}
