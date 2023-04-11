@@ -21,6 +21,17 @@ const Header = (props: any) => {
 				<div className={style.contain}>
 					<Logo />
 					<div className={style.header_strip}>
+						<ul className={style.sm_list}>
+							<li>
+								<Link href="/about">About us</Link>
+							</li>
+							<li>
+								<Link href="/contact">Contact us</Link>
+							</li>
+							<li>
+								<Link href="/privacy-policy">Privacy policy</Link>
+							</li>
+						</ul>
 						<ul className={style.social_links}>
 							<li>
 								<a href="?" target="_blank">
@@ -46,17 +57,6 @@ const Header = (props: any) => {
 								<a href="?" target="_blank">
 									<Image width={60} height={60} src={SocialFacebook} alt="" />
 								</a>
-							</li>
-						</ul>
-						<ul className={style.sm_list}>
-							<li>
-								<Link href="/about">About us</Link>
-							</li>
-							<li>
-								<Link href="/contact">Contact us</Link>
-							</li>
-							<li>
-								<Link href="/privacy-policy">Privacy policy</Link>
 							</li>
 						</ul>
 					</div>

@@ -15,20 +15,13 @@ const Navigation = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="/catalogue" className={router.pathname === "/catalogue" ? style.active : ""}>
-							Catalogue
+						<Link href="/search" className={router.pathname === "/search" ? style.active : ""}>
+							Search
 						</Link>
 					</li>
 					<li>
-						<Link href="/tournaments" className={router.pathname === "/tournaments" ? style.active : ""}>
-							Tournaments
-						</Link>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<Link href="/booking" className={router.pathname === "/booking" ? style.active : ""}>
-							Booking
+						<Link href="/works" className={router.pathname === "/search" ? style.active : ""}>
+							How it works
 						</Link>
 					</li>
 					<li>

@@ -5,6 +5,8 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CategoryCard from "@/components/categoryCard"
 import { PhotoBlog01, PhotoBlog02, PhotoBlog03 } from "@/components/images"
+import Filters from "./filters"
+import MainSearch from "@/components/mainSearch"
 
 const CATEGORIES = [
 	{
@@ -88,15 +90,35 @@ const Catalogue = () => {
 			<SubBanner title="Catalogue" />
 			<section id={style.catalogue}>
 				<div className={style.contain}>
+					<div className={style.top_head}>
+						<div className={style.txt}>
+							<h3>Search Catalogues</h3>
+							<p className="opacity-50">Showing 1-30 of 33,013 search results.</p>
+						</div>
+						<div className={style.btn_blk}>
+							<select name="" id="" className={style.input}>
+								<option value="">Sort by</option>
+								<option value="">Newest Listings</option>
+								<option value="">Oldest Listings</option>
+								<option value="">Closest</option>
+							</select>
+						</div>
+					</div>
 					<div className="row">
 						{CATEGORIES.map((data) => {
 							return (
-								<div className="col-lg-6" key={data.id}>
+								<div className="col-lg-4" key={data.id}>
 									<CategoryCard {...data} />
 								</div>
 							)
 						})}
 					</div>
+					{/* <div className={`${style.main_row} row`}>
+						<div className={`${style.col} ${style.col1}`}></div>
+						<div className={`${style.col} ${style.col2}`}>
+							<Filters />
+						</div>
+					</div> */}
 				</div>
 			</section>
 			<Footer />

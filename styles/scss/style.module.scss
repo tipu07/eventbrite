@@ -9,7 +9,7 @@
 	@include flex(center, center);
 	width: 100%;
 	max-width: 8rem;
-	height: 8rem;
+	height: 6rem;
 	> a {
 		display: block;
 		width: 100%;
@@ -24,7 +24,7 @@
 	}
 	header & {
 		@include pos;
-		margin: 2rem auto;
+		margin: 1.8rem 0 0;
 		-webkit-transition: var(--transition);
 		transition: var(--transition);
 	}
@@ -45,7 +45,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 12rem;
+	height: 8.8rem;
 	background: var(--black);
 	-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(var(--black_rgb), 0.35);
 	box-shadow: 0 0.5rem 1rem 0 rgba(var(--black_rgb), 0.35);
@@ -54,7 +54,7 @@
 	z-index: 30;
 	@at-root {
 		.header_strip {
-			@include flex(center, space-between);
+			@include flex(center, flex-end);
 			height: 4rem;
 			padding: 1rem 0;
 			ul {
@@ -81,8 +81,10 @@
 					}
 				}
 				&.sm_list {
+					margin-right: 3rem;
 					> li {
 						> a {
+							display: block;
 							font-size: 1.1rem;
 							color: var(--dark_gray);
 							&:hover {
@@ -97,8 +99,8 @@
 }
 
 #nav {
-	@include flex(center, space-between);
-	height: 8rem;
+	@include flex(center, flex-end);
+	height: 4rem;
 	@include ipad {
 		@include pos($pos: fixed);
 		@include flex(center, flex-start, column);
@@ -727,7 +729,7 @@
 	@include flex;
 	background-size: 0;
 	padding: 0;
-	margin-top: -12rem;
+	margin-top: -8.8rem;
 	@include ipad_sm {
 		padding-bottom: 4rem;
 	}
@@ -873,4 +875,61 @@
 
 #catalogue {
 	padding: 8rem 0;
+	.top_head {
+		@include flex($justify: space-between);
+		margin-bottom: 3rem;
+	}
+	.main_row {
+		> .col {
+			flex: none;
+		}
+		> .col1 {
+			width: 70%;
+		}
+		> .col2 {
+			width: 30%;
+		}
+	}
+	.category_card {
+		.txt {
+			max-width: 32rem;
+		}
+	}
+}
+
+#filter {
+	position: relative;
+	background: var(--dark);
+	padding: 2rem;
+	> .x_btn {
+		display: none;
+	}
+	.head {
+		padding: 2rem;
+		margin: -2rem -2rem 2rem;
+		border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.2);
+	}
+	.in_blk {
+		&:not(:nth-last-child(1)) {
+			padding-bottom: 2rem;
+			margin-bottom: 2rem;
+			border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.2);
+		}
+		.ctg_lst {
+			@include list;
+			> li {
+				&:not(:nth-last-child(1)) {
+					margin-bottom: 1rem;
+				}
+				> label {
+					@include i_flex;
+					color: rgba(var(--light_rgb), 0.7);
+					> input {
+						margin-top: 0.3rem;
+						margin-right: 1rem;
+					}
+				}
+			}
+		}
+	}
 }
