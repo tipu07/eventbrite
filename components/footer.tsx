@@ -83,7 +83,7 @@ const Footer = () => {
 					</div>
 					<div className={style.copyright}>
 						<p>
-							©<Link href="/">Steve Park Realtor</Link>. All Rights Reserved - Website by Ex-Dimension
+							© 2023 <Link href="/">Eventplus</Link>. All Rights Reserved
 						</p>
 						<ul className={style.terms_list}>
 							<li>
