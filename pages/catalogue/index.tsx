@@ -91,8 +91,8 @@ const Catalogue = () => {
 					<div className="row">
 						{CATEGORIES.map((data) => {
 							return (
-								<div className="col-lg-6">
-									<CategoryCard {...data} key={data.id} />
+								<div className="col-lg-6" key={data.id}>
+									<CategoryCard {...data} />
 								</div>
 							)
 						})}
