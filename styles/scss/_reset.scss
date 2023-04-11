@@ -68,7 +68,7 @@ body {
 	font-weight: 400;
 	margin: 0;
 	padding: 0;
-	padding-top: 12rem;
+	padding-top: 8.8rem;
 	line-height: 1.6;
 	word-break: break-word;
 	-webkit-transition: var(--transition);
@@ -312,10 +312,10 @@ input {
 		width: 1.8rem;
 		min-width: 1.8rem;
 		height: 1.8rem;
-		background: var(--light);
-		color: var(--light);
+		background: var(--black);
+		color: var(--black);
 		margin-top: 0;
-		border: 0.1rem solid var(--gray);
+		border: 0.1rem solid rgba(var(--light_rgb), 0.1);
 		cursor: pointer;
 	}
 	&[type="radio"] {
