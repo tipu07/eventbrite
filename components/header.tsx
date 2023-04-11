@@ -12,8 +12,8 @@ const Header = (props: any) => {
 	return (
 		<>
 			<Head>
-				<title>{pageTitle} — Eventbrite</title>
-				<meta name="description" content="Eventbrite" />
+				<title>{pageTitle} — Eventplus</title>
+				<meta name="description" content="Eventplus" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes" />
 				<link rel="icon" href="/images/favicon.ico" />
 			</Head>
