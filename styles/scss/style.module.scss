@@ -291,7 +291,7 @@
 	.copyright {
 		@include flex(center, space-between);
 		font-size: 1.2rem;
-		margin-top: 4rem;
+		margin-top: 6rem;
 		padding-top: 3rem;
 		border-top: 0.1rem solid rgba(var(--light_rgb), 0.2);
 		@include ipad {
@@ -456,11 +456,6 @@
 		margin: -1rem;
 		> div {
 			padding: 1rem;
-		}
-	}
-	form {
-		.btn_blk {
-			margin-top: 2.6rem;
 		}
 	}
 	@at-root {
@@ -809,9 +804,73 @@
 */
 
 #terms {
-	padding: 6rem 0;
+	padding: 8rem 0;
 	.blk {
 		background: var(--dark);
 		padding: 3rem;
 	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Booking
+|----------------------------------------------------------------------
+*/
+
+#booking {
+	padding: 8rem 0;
+	.blk {
+		max-width: 80rem;
+		background: var(--dark);
+		padding: 3rem;
+		margin: auto;
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Contact
+|----------------------------------------------------------------------
+*/
+
+#contact {
+	padding: 8rem 0;
+	.blk {
+		background: var(--dark);
+		padding: 3rem;
+	}
+	.content {
+		.info_list {
+			@include list;
+			li {
+				@include flex;
+				&:not(:nth-last-child(1)) {
+					margin-bottom: 1.5rem;
+				}
+				> img {
+					@include object(contain);
+					width: 2rem;
+					min-width: 2rem;
+					height: 2rem;
+					margin-right: 1rem;
+				}
+				> a {
+					color: var(--prime_color);
+					&:hover {
+						color: var(--light);
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Catalogue
+|----------------------------------------------------------------------
+*/
+
+#catalogue {
+	padding: 8rem 0;
 }

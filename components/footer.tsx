@@ -19,19 +19,16 @@ const Footer = () => {
 									<Link href="/about">About</Link>
 								</li>
 								<li>
-									<Link href="/services">Services</Link>
-								</li>
-								<li>
 									<Link href="/catalogue">Catalogue</Link>
 								</li>
 								<li>
 									<Link href="/tournaments">Tournaments</Link>
 								</li>
 								<li>
-									<Link href="/resources">Resources</Link>
+									<Link href="/reviews">Reviews</Link>
 								</li>
 								<li>
-									<Link href="/reviews">Reviews</Link>
+									<Link href="/contact">Contact us</Link>
 								</li>
 								<li>
 									<Link href="/booking">Booking</Link>
@@ -72,7 +69,7 @@ const Footer = () => {
 							<div className={style.title}>Sign up to our newsletter</div>
 							<form action="" method="POST">
 								<div className={style.form_blk + " " + style.input}>
-									<input type="text" name="" id="" className={style.input} placeholder="E-mail" />
+									<input type="text" name="" id="" className={style.input} placeholder="Email Address" />
 									<button type="submit" className={style.link_btn}></button>
 								</div>
 								<p>

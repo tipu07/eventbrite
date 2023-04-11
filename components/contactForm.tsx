@@ -39,7 +39,7 @@ const ContactForm = () => {
 						</div>
 					</div>
 				</div>
-				<div className={style.btn_blk}>
+				<div className={`${style.btn_blk} mt-5`}>
 					<button type="submit" className={style.site_btn + " w-100"}>
 						Send Message
 					</button>
