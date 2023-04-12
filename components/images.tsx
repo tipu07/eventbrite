@@ -22,6 +22,8 @@ export { default as PhotoTeam04 } from "/public/images/team4-banner.png"
 export { default as PhotoTeam05 } from "/public/images/team5-banner.png"
 export { default as PhotoTeam06 } from "/public/images/team6-banner.png"
 export { default as PhotoTeam07 } from "/public/images/team7-banner.png"
+export { default as PhotoAbout } from "/public/images/p2-slider-background-img-1.jpg"
+export { default as PhotoAboutMe } from "/public/images/p1-img-1.jpg"
 
 export { default as IconTick } from "/public/images/tick.svg"
 export { default as IconCalendar } from "/public/images/icon-calendar.svg"

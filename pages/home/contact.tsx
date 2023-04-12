@@ -20,7 +20,7 @@ const Contact = () => {
 									<h5>Meet Eventplus</h5>
 									<p>“With 14+ years of experience working and living in the South Orange County area, I am well-equipped to assist you with all your real estate needs.”</p>
 								</div>
-								<div className="image">
+								<div className={style.image}>
 									<Image width={1000} height={1000} src={PhotoStreamBox} alt="" />
 								</div>
 							</div>
