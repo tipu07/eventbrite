@@ -8,7 +8,7 @@ import { PhotoMainSlide } from "@/components/images"
 import Pagination from "@/components/pagination"
 import TopFilters from "./topFilters"
 
-const CATEGORIES = [
+const SEARCH_RESULTS = [
 	{
 		id: 1,
 		title: "White Keep Assault",
@@ -129,6 +129,86 @@ const CATEGORIES = [
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
 		img: PhotoMainSlide,
 	},
+	{
+		id: 13,
+		title: "Winners on ESL Pro",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "January 31, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoBlog03,
+	},
+	{
+		id: 14,
+		title: "Keep Winner DOTA",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "September 14, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoMainSlide,
+	},
+	{
+		id: 15,
+		title: "White Keep Assault",
+		link: "?",
+		wishlist: true,
+		tag: "esports",
+		date: "September 14, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoBlog01,
+	},
+	{
+		id: 16,
+		title: "Dota 2 Tournament",
+		link: "?",
+		wishlist: true,
+		tag: "esports",
+		date: "July 07, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoBlog02,
+	},
+	{
+		id: 17,
+		title: "Winners on ESL Pro",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "January 31, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoBlog03,
+	},
+	{
+		id: 18,
+		title: "Keep Winner DOTA",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "September 14, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoMainSlide,
+	},
+	{
+		id: 19,
+		title: "White Keep Assault",
+		link: "?",
+		wishlist: true,
+		tag: "esports",
+		date: "September 14, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoBlog01,
+	},
+	{
+		id: 20,
+		title: "Dota 2 Tournament",
+		link: "?",
+		wishlist: true,
+		tag: "esports",
+		date: "July 07, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoBlog02,
+	},
 ]
 
 const Search = () => {
@@ -139,7 +219,7 @@ const Search = () => {
 				<div className={style.contain}>
 					<TopFilters />
 					<div className="row">
-						{CATEGORIES.map((data) => {
+						{SEARCH_RESULTS.map((data) => {
 							return (
 								<div className="col-lg-4" key={data.id}>
 									<CategoryCard {...data} />
