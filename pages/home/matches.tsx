@@ -62,9 +62,11 @@ const Matches = () => {
 						<h5 className={style.subheading}>Tournaments</h5>
 						<h2>Trending Tournaments</h2>
 					</div>
-					{MATCH_CARD.map((data) => {
-						return <MatchCard {...data} key={data.id} />
-					})}
+					<div className={style.match_cards}>
+						{MATCH_CARD.map((data) => {
+							return <MatchCard {...data} key={data.id} />
+						})}
+					</div>
 				</div>
 			</section>
 		</>

@@ -12,7 +12,7 @@ const Report = () => {
 						<div className="col-lg-6">
 							<div className={style.content}>
 								<h5 className={style.subheading}>Resources</h5>
-								<h2 className="h1 text-uppercase fw_700">Sign Up for Monthly Market Report</h2>
+								<h2 className="h1">Sign Up for joining Tournaments</h2>
 								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae vitae architecto ex perspiciatis maxime nam ducimus tenetur dignissimos reprehenderit obcaecati minus commodi, corrupti nesciunt debitis earum omnis harum pariatur et.</p>
 								<div className={style.btn_blk + " " + style.btn_blk_desktop}>
 									<button type="button" className={style.site_btn + " " + style.pop_btn}>

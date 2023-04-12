@@ -208,14 +208,20 @@
 	@at-root {
 		.main_search_form {
 			@include flex;
+			background: rgba(var(--light_rgb), 0.2);
+			border-radius: 0.8rem;
 			-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
 			box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
+			overflow: hidden;
 			> .input {
 				-webkit-box-flex: 1;
 				-ms-flex: 1;
 				flex: 1;
+				background-color: transparent;
 				&:nth-child(1) {
 					border-right: 0.1rem solid rgba(var(--light_rgb), 0.2);
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
 				}
 			}
 		}
@@ -421,6 +427,10 @@
 	@include ipad_sm {
 		padding: 4rem 0;
 	}
+	.image {
+		border-radius: 0.8rem;
+		overflow: hidden;
+	}
 	.btn_blk {
 		margin-top: 2rem;
 		&_desktop {
@@ -474,6 +484,10 @@
 			@include ipad_sm {
 				margin-bottom: 2rem;
 			}
+			.image {
+				border-radius: 0.8rem;
+				overflow: hidden;
+			}
 			.text {
 				position: absolute;
 				top: 0;
@@ -481,6 +495,8 @@
 				max-width: 39rem;
 				background: var(--prime_color);
 				padding: 2rem;
+				border-radius: 0.8rem;
+				overflow: hidden;
 				z-index: 1;
 				@include mobile {
 					max-width: 25rem;
@@ -523,6 +539,9 @@
 		.slick_category {
 			-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
 			box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
+			.category_card {
+				border-radius: 0;
+			}
 		}
 	}
 }
@@ -530,6 +549,7 @@
 .category_card {
 	position: relative;
 	padding-bottom: 84%;
+	border-radius: 0.8rem;
 	-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
 	box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
 	overflow: hidden;
@@ -604,6 +624,7 @@
 		max-width: 36rem;
 		background: rgba(var(--dark_rgb), 0.8);
 		padding: 2rem;
+		border-top-right-radius: 0.8rem;
 		z-index: 2;
 		.tag {
 			display: inline-block;
@@ -612,6 +633,7 @@
 			line-height: 1;
 			padding: 0.3rem 1rem 0.6rem;
 			margin-bottom: 2rem;
+			border-radius: 0.4rem;
 		}
 		.date {
 			@include flex(center);
@@ -707,6 +729,10 @@
 	&:not(:nth-last-child(1)) {
 		border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.2);
 	}
+	&s {
+		border-radius: 0.8rem;
+		overflow: hidden;
+	}
 	> a {
 		@include pos($z: 2);
 	}
@@ -753,6 +779,7 @@
 					line-height: 1;
 					padding: 0.3rem 1rem 0.6rem;
 					margin-bottom: 2rem;
+					border-radius: 0.4rem;
 				}
 			}
 		}
@@ -1068,6 +1095,117 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       About us
+|----------------------------------------------------------------------
+*/
+
+#about {
+	padding: 8rem 0;
+}
+
+#intro {
+	padding: 8rem 0;
+}
+
+#affiliate {
+	background: var(--dark);
+	padding: 8rem 0;
+	.content {
+		max-width: 60rem;
+		margin: 0 auto 3rem;
+	}
+	.flex_row {
+		> div {
+			@include flex;
+		}
+	}
+	.inner {
+		// background: rgba(var(--light_rgb), 0.2);
+		background: var(--prime_color);
+		padding: 3rem;
+		a {
+			color: var(--light);
+			opacity: 0.7;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	& ~ #in_touch {
+		padding-top: 8rem;
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       FAQ's
+|----------------------------------------------------------------------
+*/
+
+#faq {
+	padding: 8rem 0;
+	.contain {
+		max-width: 80rem;
+	}
+}
+
+.faq_lst {
+	&:not(:nth-last-child(1)) {
+		margin-bottom: 4rem;
+	}
+	> .faq_blk {
+		position: relative;
+		background: rgba(var(--light_rgb), 0.2);
+		padding: 2rem;
+		margin-bottom: 2rem;
+		border-radius: 0.8rem;
+		-webkit-transition: var(--transition);
+		transition: var(--transition);
+		&:nth-last-child(1) {
+			margin-bottom: 0;
+		}
+		&.active {
+			h5 {
+				color: var(--prime_color);
+				&:after {
+					-webkit-transform: rotateX(180deg);
+					transform: rotateX(180deg);
+				}
+			}
+			.txt {
+				display: block;
+			}
+		}
+		h5 {
+			position: relative;
+			padding: 0 2rem 0 0;
+			margin: 0;
+			cursor: pointer;
+			-webkit-transition: var(--transition);
+			transition: var(--transition);
+			z-index: 2;
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0.4rem;
+				right: 0;
+				@include chev;
+				width: 1.2rem;
+				height: 1.2rem;
+			}
+			&:hover {
+				color: var(--prime_color);
+			}
+		}
+		.txt {
+			display: none;
+			padding: 1rem 0 0;
 		}
 	}
 }
