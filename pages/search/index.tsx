@@ -1,18 +1,19 @@
 import React from "react"
 import style from "@/styles/scss/app.module.scss"
-import SubBanner from "@/components/subBanner"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CategoryCard from "@/components/categoryCard"
 import { PhotoBlog01, PhotoBlog02, PhotoBlog03 } from "@/components/images"
-import Filters from "./filters"
-import MainSearch from "@/components/mainSearch"
+import { PhotoMainSlide } from "@/components/images"
+import Pagination from "@/components/pagination"
+import TopFilters from "./topFilters"
 
 const CATEGORIES = [
 	{
 		id: 1,
 		title: "White Keep Assault",
 		link: "?",
+		wishlist: true,
 		tag: "esports",
 		date: "September 14, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -22,6 +23,7 @@ const CATEGORIES = [
 		id: 2,
 		title: "Dota 2 Tournament",
 		link: "?",
+		wishlist: true,
 		tag: "esports",
 		date: "July 07, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -31,6 +33,7 @@ const CATEGORIES = [
 		id: 3,
 		title: "Winners on ESL Pro",
 		link: "?",
+		wishlist: false,
 		tag: "esports",
 		date: "January 31, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -38,72 +41,103 @@ const CATEGORIES = [
 	},
 	{
 		id: 4,
+		title: "Keep Winner DOTA",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "September 14, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoMainSlide,
+	},
+	{
+		id: 5,
 		title: "White Keep Assault",
 		link: "?",
+		wishlist: true,
 		tag: "esports",
 		date: "September 14, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
 		img: PhotoBlog01,
 	},
 	{
-		id: 5,
+		id: 6,
 		title: "Dota 2 Tournament",
 		link: "?",
+		wishlist: true,
 		tag: "esports",
 		date: "July 07, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
 		img: PhotoBlog02,
 	},
 	{
-		id: 6,
+		id: 7,
 		title: "Winners on ESL Pro",
 		link: "?",
+		wishlist: false,
 		tag: "esports",
 		date: "January 31, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
 		img: PhotoBlog03,
 	},
 	{
-		id: 7,
+		id: 8,
+		title: "Keep Winner DOTA",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "September 14, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoMainSlide,
+	},
+	{
+		id: 9,
 		title: "White Keep Assault",
 		link: "?",
+		wishlist: true,
 		tag: "esports",
 		date: "September 14, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
 		img: PhotoBlog01,
 	},
 	{
-		id: 8,
+		id: 10,
 		title: "Dota 2 Tournament",
 		link: "?",
+		wishlist: true,
 		tag: "esports",
 		date: "July 07, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
 		img: PhotoBlog02,
 	},
+	{
+		id: 11,
+		title: "Winners on ESL Pro",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "January 31, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoBlog03,
+	},
+	{
+		id: 12,
+		title: "Keep Winner DOTA",
+		link: "?",
+		wishlist: false,
+		tag: "esports",
+		date: "September 14, 2021",
+		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
+		img: PhotoMainSlide,
+	},
 ]
 
-const Catalogue = () => {
+const Search = () => {
 	return (
 		<>
-			<Header pageTitle="Catalogue" />
-			<SubBanner title="Catalogue" />
-			<section id={style.catalogue}>
+			<Header pageTitle="Search" />
+			<section id={style.search}>
 				<div className={style.contain}>
-					<div className={style.top_head}>
-						<div className={style.txt}>
-							<h3>Search Catalogues</h3>
-							<p className="opacity-50">Showing 1-30 of 33,013 search results.</p>
-						</div>
-						<div className={style.btn_blk}>
-							<select name="" id="" className={style.input}>
-								<option value="">Sort by</option>
-								<option value="">Newest Listings</option>
-								<option value="">Oldest Listings</option>
-								<option value="">Closest</option>
-							</select>
-						</div>
-					</div>
+					<TopFilters />
 					<div className="row">
 						{CATEGORIES.map((data) => {
 							return (
@@ -113,12 +147,7 @@ const Catalogue = () => {
 							)
 						})}
 					</div>
-					{/* <div className={`${style.main_row} row`}>
-						<div className={`${style.col} ${style.col1}`}></div>
-						<div className={`${style.col} ${style.col2}`}>
-							<Filters />
-						</div>
-					</div> */}
+					<Pagination />
 				</div>
 			</section>
 			<Footer />
@@ -126,4 +155,4 @@ const Catalogue = () => {
 	)
 }
 
-export default Catalogue
+export default Search
