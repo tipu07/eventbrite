@@ -20,7 +20,7 @@ const Navigation = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="/works" className={router.pathname === "/search" ? style.active : ""}>
+						<Link href="/works" className={router.pathname === "/works" ? style.active : ""}>
 							How it works
 						</Link>
 					</li>
