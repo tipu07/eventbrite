@@ -1,20 +1,18 @@
 import React from "react"
 import style from "@/styles/scss/app.module.scss"
+import TermsContent from "./disclaimer/termsContent"
 import SubBanner from "@/components/subBanner"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import BookingForm from "./bookingForm"
 
-const Booking = () => {
+const Disclaimer = () => {
 	return (
 		<>
-			<Header pageTitle="Booking" />
-			<SubBanner title="Booking" />
-			<section id={style.booking}>
+			<Header pageTitle="Disclaimer" />
+			<SubBanner title="Disclaimer" />
+			<section id={style.terms}>
 				<div className={style.contain}>
-					<div className={style.blk}>
-						<BookingForm />
-					</div>
+					<TermsContent />
 				</div>
 			</section>
 			<Footer />
@@ -22,4 +20,4 @@ const Booking = () => {
 	)
 }
 
-export default Booking
+export default Disclaimer

@@ -2,7 +2,7 @@ import React from "react"
 import style from "@/styles/scss/app.module.scss"
 import LogonSidebar from "@/components/logonSidebar"
 import { PhotoBlog03 } from "@/components/images"
-import ForgotForm from "./forgotForm"
+import ForgotForm from "./forgot/forgotForm"
 
 const Forgot = () => {
 	return (

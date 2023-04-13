@@ -4,7 +4,7 @@ import SubBanner from "@/components/subBanner"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import ContactForm from "@/components/contactForm"
-import ContactInfo from "./contactInfo"
+import ContactInfo from "./contact/contactInfo"
 
 const Contact = () => {
 	return (

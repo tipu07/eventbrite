@@ -6,7 +6,7 @@ import CategoryCard from "@/components/categoryCard"
 import { PhotoBlog01, PhotoBlog02, PhotoBlog03 } from "@/components/images"
 import { PhotoMainSlide } from "@/components/images"
 import Pagination from "@/components/pagination"
-import TopFilters from "./topFilters"
+import TopFilters from "./search/topFilters"
 
 const SEARCH_RESULTS = [
 	{
