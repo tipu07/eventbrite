@@ -14,13 +14,13 @@ const LogonSidebar = (props: any) => {
 					<p>Rerum veniam dolores sit illum consectetur dolorum numquam eveniet iste. Pariatur fugiat consequatur nobis dolor et labore sit voluptas omnis.</p>
 					<ul className={style.terms_list}>
 						<li>
-							<Link href="/terms-conditions">Terms & conditions</Link>
+							<Link href="/production/terms-conditions">Terms & conditions</Link>
 						</li>
 						<li>
-							<Link href="/disclaimer">Disclaimer</Link>
+							<Link href="/production/disclaimer">Disclaimer</Link>
 						</li>
 						<li>
-							<Link href="/privacy-policy">Privacy Policy</Link>
+							<Link href="/production/privacy-policy">Privacy Policy</Link>
 						</li>
 					</ul>
 				</div>

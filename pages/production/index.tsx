@@ -1,10 +1,10 @@
 import Header from "@/components/header"
-import Banner from "./banner"
+import Banner from "./home/banner"
 import Footer from "@/components/footer"
-import Contact from "./contact"
-import Report from "./report"
-import Categories from "./categories"
-import Matches from "./matches"
+import Contact from "./home/contact"
+import Report from "./home/report"
+import Categories from "./home/categories"
+import Matches from "./home/matches"
 
 const Home = () => {
 	return (

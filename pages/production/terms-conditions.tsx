@@ -1,18 +1,18 @@
 import React from "react"
 import style from "@/styles/scss/app.module.scss"
+import TermsContent from "./terms-conditions/termsContent"
 import SubBanner from "@/components/subBanner"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import FaqData from "./faqData"
 
-const Faq = () => {
+const TermsConditions = () => {
 	return (
 		<>
-			<Header pageTitle="FAQ's" />
-			<SubBanner title="FAQ's" />
-			<section id={style.faq}>
+			<Header pageTitle="Terms & Conditions" />
+			<SubBanner title="Terms & Conditions" />
+			<section id={style.terms}>
 				<div className={style.contain}>
-					<FaqData />
+					<TermsContent />
 				</div>
 			</section>
 			<Footer />
@@ -20,4 +20,4 @@ const Faq = () => {
 	)
 }
 
-export default Faq
+export default TermsConditions

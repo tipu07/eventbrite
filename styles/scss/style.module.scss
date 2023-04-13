@@ -895,6 +895,7 @@
 	.blk {
 		background: var(--dark);
 		padding: 3rem;
+		border-radius: 0.8rem;
 	}
 }
 
@@ -911,6 +912,7 @@
 		background: var(--dark);
 		padding: 3rem;
 		margin: auto;
+		border-radius: 0.8rem;
 	}
 }
 
@@ -925,6 +927,7 @@
 	.blk {
 		background: var(--dark);
 		padding: 3rem;
+		border-radius: 0.8rem;
 	}
 	.content {
 		.info_list {
@@ -1111,6 +1114,10 @@
 
 #intro {
 	padding: 8rem 0;
+	.image {
+		border-radius: 0.8rem;
+		overflow: hidden;
+	}
 }
 
 #affiliate {
@@ -1129,6 +1136,7 @@
 		// background: rgba(var(--light_rgb), 0.2);
 		background: var(--prime_color);
 		padding: 3rem;
+		border-radius: 0.8rem;
 		a {
 			color: var(--light);
 			opacity: 0.7;

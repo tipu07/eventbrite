@@ -16,22 +16,22 @@ const Footer = () => {
 							<div className={style.title}>Quick Links</div>
 							<ul className={style.list}>
 								<li>
-									<Link href="/about">About</Link>
+									<Link href="/production/about">About</Link>
 								</li>
 								<li>
-									<Link href="/catalogue">Catalogue</Link>
+									<Link href="/production/catalogue">Catalogue</Link>
 								</li>
 								<li>
-									<Link href="/tournaments">Tournaments</Link>
+									<Link href="/production/tournaments">Tournaments</Link>
 								</li>
 								<li>
-									<Link href="/reviews">Reviews</Link>
+									<Link href="/production/reviews">Reviews</Link>
 								</li>
 								<li>
-									<Link href="/contact">Contact us</Link>
+									<Link href="/production/contact">Contact us</Link>
 								</li>
 								<li>
-									<Link href="/booking">Booking</Link>
+									<Link href="/production/booking">Booking</Link>
 								</li>
 							</ul>
 						</div>
@@ -84,13 +84,13 @@ const Footer = () => {
 						</p>
 						<ul className={style.terms_list}>
 							<li>
-								<Link href="/privacy-policy">Privacy Policy</Link>
+								<Link href="/production/privacy-policy">Privacy Policy</Link>
 							</li>
 							<li>
-								<Link href="/terms-conditions">Terms & conditions</Link>
+								<Link href="/production/terms-conditions">Terms & conditions</Link>
 							</li>
 							<li>
-								<Link href="/disclaimer">Disclaimer</Link>
+								<Link href="/production/disclaimer">Disclaimer</Link>
 							</li>
 						</ul>
 					</div>

@@ -1,12 +1,11 @@
 import React from "react"
-import style from "@/styles/scss/app.module.scss"
 import SubBanner from "@/components/subBanner"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { PhotoAbout } from "@/components/images"
-import Intro from "./intro"
-import Affiliate from "./affiliate"
-import Contact from "../home/contact"
+import Intro from "./about/intro"
+import Affiliate from "./about/affiliate"
+import Contact from "./home/contact"
 
 const About = () => {
 	return (
