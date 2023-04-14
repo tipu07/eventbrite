@@ -27,3 +27,11 @@ export { default as PhotoAboutMe } from "/public/images/p1-img-1.jpg"
 
 export { default as IconTick } from "/public/images/tick.svg"
 export { default as IconCalendar } from "/public/images/icon-calendar.svg"
+export { default as IconSearch } from "/public/images/icon-search.svg"
+export { default as IconEdit } from "/public/images/icon-edit.svg"
+export { default as IconTrash } from "/public/images/icon-trash.svg"
+export { default as IconDownloadCsv } from "/public/images/download_csv_icon.svg"
+
+export { default as VectorPaypal } from "/public/images/paypal.svg"
+export { default as VectorVisa } from "/public/images/visa.svg"
+export { default as VectorBank } from "/public/images/bank.svg"
