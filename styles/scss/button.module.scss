@@ -50,8 +50,7 @@
 		// width: 3.8rem;
 		width: auto;
 		height: 2.4rem;
-		-webkit-filter: brightness(0) invert(1);
-		filter: brightness(0) invert(1);
+		// @include filter(1);
 		-webkit-transition: inherit;
 		transition: inherit;
 	}

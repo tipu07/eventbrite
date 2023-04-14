@@ -1,6 +1,6 @@
 import React from "react"
 import SubBanner from "@/components/subBanner"
-import Header from "@/components/header"
+import Header from "@/components/header/header"
 import Footer from "@/components/footer"
 import { PhotoAbout } from "@/components/images"
 import Intro from "./about/intro"

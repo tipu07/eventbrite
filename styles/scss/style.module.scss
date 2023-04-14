@@ -68,11 +68,9 @@
 							width: 1.6rem;
 							min-width: 1.6rem;
 							height: 1.6rem;
-							-webkit-filter: brightness(0) invert(0.6);
-							filter: brightness(0) invert(0.6);
+							@include filter(0.6);
 							&:hover {
-								-webkit-filter: none;
-								filter: none;
+								@include filter(none);
 							}
 							> img {
 								@include object(contain);
@@ -104,8 +102,7 @@
 	@include ipad {
 		@include pos($pos: fixed);
 		@include flex(center, flex-start, column);
-		gap: 2rem;
-		grid-gap: 2rem;
+		@include gap(2rem);
 		height: auto;
 		background: rgba(var(--black_rgb), 0.9);
 		padding: 5rem;
@@ -606,13 +603,11 @@
 		&.heart {
 			&::before {
 				background-image: url("/images/icon-heart.svg");
-				-webkit-filter: brightness(0) invert(1);
-				filter: brightness(0) invert(1);
+				@include filter(1);
 			}
 			&.fill {
 				&::before {
-					-webkit-filter: none;
-					filter: none;
+					@include filter(none);
 				}
 			}
 		}
@@ -645,8 +640,7 @@
 				min-width: 1.6rem;
 				height: 1.6rem;
 				margin-right: 1rem;
-				-webkit-filter: brightness(0) invert(1);
-				filter: brightness(0) invert(1);
+				@include filter(1);
 			}
 		}
 		h4 {
@@ -793,8 +787,7 @@
 				min-width: 1.6rem;
 				height: 1.6rem;
 				margin-right: 1rem;
-				-webkit-filter: brightness(0) invert(1);
-				filter: brightness(0) invert(1);
+				@include filter(1);
 			}
 		}
 	}
@@ -901,11 +894,11 @@
 
 /*
 |----------------------------------------------------------------------
-|       Booking
+|       Book Now
 |----------------------------------------------------------------------
 */
 
-#booking {
+#book_now {
 	padding: 8rem 0;
 	.blk {
 		max-width: 80rem;
@@ -979,12 +972,14 @@
 
 .pagination {
 	@include flex(center, center);
+	margin-top: 4rem;
 	> ul {
 		@include list;
 		@include flex;
-		margin-top: 4rem;
+		border-radius: 0.8rem;
 		-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
 		box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
+		overflow: hidden;
 		> li {
 			&.active {
 				> a,
@@ -998,14 +993,14 @@
 			> span,
 			> button {
 				@include flex(center, center);
-				min-width: 4.2rem;
-				height: 4.2rem;
+				min-width: 4.4rem;
+				height: 4.4rem;
 				background: rgba(var(--light_rgb), 0.2);
 				color: rgba(var(--light_rgb), 0.5);
 				font-weight: 600;
 				padding: 0 0.5rem;
 				&:hover {
-					background: rgba(var(--light_rgb), 0.4);
+					background: rgba(var(--light_rgb), 0.3);
 					color: var(--light);
 				}
 				&.prev,
@@ -1214,6 +1209,226 @@
 		.txt {
 			display: none;
 			padding: 1rem 0 0;
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|       Dashboard
+|----------------------------------------------------------------------
+*/
+
+.dashboard {
+	padding: 4rem 0 8rem;
+	.table_top_block {
+		@include flex;
+		margin: 3rem 0 2rem;
+		.form_blk {
+			min-width: 36rem;
+			margin: 0;
+			margin-right: auto;
+			> img {
+				@include filter(1);
+			}
+		}
+	}
+	.pay_blk {
+		@include flex($flow: column);
+		@include gap(2rem 0);
+		background: var(--dark);
+		padding: 2rem;
+		border-radius: 0.8rem;
+		.head {
+			margin-bottom: 1rem;
+		}
+		.icon {
+			width: auto;
+			max-width: 10rem;
+			height: 2.6rem;
+			> img {
+				@include object(top left);
+			}
+		}
+		.cvc {
+			font-weight: 500;
+		}
+		.date {
+			color: rgba(var(--light_rgb), 0.5);
+		}
+		.btm {
+			padding: 1.5rem 2rem;
+			margin: -2rem;
+			margin-top: 0;
+			border-top: 0.1rem solid rgba(var(--light_rgb), 0.2);
+			.action_btn {
+				margin-top: 0;
+			}
+		}
+	}
+	.action_btn {
+		@include flex(center, $flow: wrap);
+		@include list;
+		@include gap(0.5rem 2rem);
+		margin-top: 1rem;
+		text-align: center;
+		> li {
+			flex: 1;
+			&:not(:nth-last-child(1)) {
+				border-right: 0.1rem solid rgba(var(--light_rgb), 0.2);
+			}
+			> a {
+				@include flex(center, center);
+				@include gap(0 1rem);
+				font-weight: 500;
+				&:not(:hover) {
+					color: var(--light);
+				}
+				> img {
+					width: 1.4rem;
+					min-width: 1.4rem;
+					height: 1.4rem;
+				}
+			}
+		}
+	}
+}
+
+#account {
+	.pro_blk {
+		@include flex(center);
+		@include mobile_md {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			text-align: center;
+		}
+		> .ico {
+			width: 7rem;
+			min-width: 7rem;
+			height: 7rem;
+			margin-right: 2rem;
+			@include mobile_md {
+				margin: 0 auto 1rem;
+			}
+			&.icon {
+				border-radius: 1rem;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				> img {
+					-o-object-fit: contain;
+					object-fit: contain;
+				}
+			}
+		}
+		.txt {
+			h2 {
+				margin-bottom: 0;
+				span {
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	.dp_blk {
+		@include flex(flex-end);
+		margin-bottom: 3rem;
+		@include mobile {
+			-ms-flex-flow: wrap;
+			flex-flow: wrap;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
+		.ico {
+			width: 15rem;
+			min-width: 15rem;
+			height: 15rem;
+			margin-right: 2rem;
+			@include mobile {
+				margin: 0 0 2rem;
+			}
+			@include mobile_md {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		.txt {
+			@include mobile_md {
+				text-align: center;
+			}
+			.change_photo_btn {
+				color: var(--prime_color);
+				font-weight: 600;
+			}
+			.btn_blk {
+				@include mobile_md {
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+				}
+				input[type="file"] {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.table_blk {
+	overflow: hidden;
+	overflow-x: auto;
+	&_wrap {
+		background: var(--dark);
+		border-radius: 0.8rem;
+		overflow: hidden;
+		.table_pagination {
+			@include flex(center, space-between);
+			padding: 2rem;
+			> * {
+				margin: 0;
+			}
+		}
+	}
+	table {
+		width: 100%;
+		min-width: 100rem;
+		tr {
+			th,
+			td {
+				padding: 2rem 1rem;
+				border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.2);
+				&:nth-child(1) {
+					padding-left: 2rem;
+				}
+				&:nth-last-child(1) {
+					padding-right: 2rem;
+				}
+			}
+		}
+		thead {
+			th {
+				color: rgba(var(--light_rgb), 0.7);
+				font-size: 1.3rem;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+#booking {
+	table {
+		white-space: nowrap;
+		.interest {
+			> span {
+				@include i_flex(center, center);
+				background: rgba(var(--light_rgb), 0.2);
+				line-height: 1;
+				padding: 0.6rem 0.6rem;
+				margin-right: 0.4rem;
+				border-radius: 0.3rem;
+			}
 		}
 	}
 }

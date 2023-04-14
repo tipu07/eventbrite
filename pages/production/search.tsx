@@ -1,6 +1,6 @@
 import React from "react"
 import style from "@/styles/scss/app.module.scss"
-import Header from "@/components/header"
+import Header from "@/components/header/header"
 import Footer from "@/components/footer"
 import CategoryCard from "@/components/categoryCard"
 import { PhotoBlog01, PhotoBlog02, PhotoBlog03 } from "@/components/images"

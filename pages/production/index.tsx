@@ -1,4 +1,4 @@
-import Header from "@/components/header"
+import Header from "@/components/header/header"
 import Banner from "./home/banner"
 import Footer from "@/components/footer"
 import Contact from "./home/contact"
