@@ -1,28 +1,74 @@
 import Link from "next/link"
-import React, { useEffect, useState } from "react"
 import style from "@/styles/scss/app.module.scss"
-import Router, { useRouter } from "next/router"
+import { useRouter } from "next/router"
+import { IconBell, PhotoUser_01 } from "../images"
+import Image from "next/image"
+import { useState } from "react"
 
-const Navigation = () => {
-	const [header, setHeader] = useState("production")
+const Navigation = (props: any) => {
+	const { headerType } = props
+	const [dropdown, setDropdown] = useState(false)
 	const router = useRouter()
 
-	useEffect(() => {
-		const { pathname } = Router
-		if (pathname == "/") {
-			setHeader("production")
-		} else if (pathname == "/player") {
-			setHeader("player")
-		} else if (pathname == "/organizer") {
-			setHeader("organizer")
-		} else {
-			setHeader("production")
-		}
-	}, [])
+	const dropdownHandle = () => {
+		setDropdown(!dropdown)
+	}
+
 	return (
 		<>
 			<nav id={style.nav}>
-				{header === "production" ? (
+				{headerType === "player" ? (
+					<>
+						<ul>
+							<li>
+								<Link href="/player" className={router.pathname === "/player" ? style.active : ""}>
+									Dashboard
+								</Link>
+							</li>
+							<li>
+								<Link href="/player/booking" className={router.pathname === "/player/booking" ? style.active : ""}>
+									Booking
+								</Link>
+							</li>
+							<li>
+								<Link href="/player/transactions" className={router.pathname === "/player/transactions" ? style.active : ""}>
+									Transactions
+								</Link>
+							</li>
+							<li>
+								<Link href="/player/wishlists" className={router.pathname === "/player/wishlists" ? style.active : ""}>
+									Wishlists
+								</Link>
+							</li>
+						</ul>
+						<ul id={style.icon_btn}>
+							<li>
+								<Link href="/player/notifications" className={router.pathname === "/player/notifications" ? style.active : ""}>
+									<Image width={100} height={100} src={IconBell} alt="" />
+								</Link>
+							</li>
+						</ul>
+						<div id={style.pro_btn} className={style.dropdown}>
+							<div className={`${style.ico} ${style.fill} ${style.round}`} onClick={dropdownHandle}>
+								<Image width={100} height={100} src={PhotoUser_01} alt="" />
+							</div>
+							<ul className={`${style.dropdown_menu} ${dropdown && style.active}`}>
+								<li>
+									<Link href="/player">Dashboard</Link>
+								</li>
+								<li>
+									<Link href="/player/booking">Bookings</Link>
+								</li>
+								<li>
+									<Link href="/player/transactions">Transactions</Link>
+								</li>
+								<li>
+									<Link href="/signin">Sign out</Link>
+								</li>
+							</ul>
+						</div>
+					</>
+				) : (
 					<ul>
 						<li>
 							<Link href="/production" className={router.pathname === "/production" ? style.active : ""}>
@@ -47,34 +93,6 @@ const Navigation = () => {
 						<li>
 							<Link href="/production/signup" className={router.pathname === "/production/signup" ? style.active : ""}>
 								Sign up
-							</Link>
-						</li>
-					</ul>
-				) : (
-					<ul>
-						<li>
-							<Link href="/player" className={router.pathname === "/player" ? style.active : ""}>
-								Dashboard
-							</Link>
-						</li>
-						<li>
-							<Link href="/player/booking" className={router.pathname === "/player/booking" ? style.active : ""}>
-								Booking
-							</Link>
-						</li>
-						<li>
-							<Link href="/player/transactions" className={router.pathname === "/player/transactions" ? style.active : ""}>
-								Transactions
-							</Link>
-						</li>
-						<li>
-							<Link href="/player/wishlists" className={router.pathname === "/player/wishlists" ? style.active : ""}>
-								Wishlists
-							</Link>
-						</li>
-						<li>
-							<Link href="/player/close-account" className={router.pathname === "/player/close-account" ? style.active : ""}>
-								Close Account
 							</Link>
 						</li>
 					</ul>
