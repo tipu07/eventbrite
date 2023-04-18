@@ -202,6 +202,20 @@ $cross_circle: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www
 	}
 }
 
+@mixin scrollbar {
+	&::-webkit-scrollbar {
+		width: 0.8rem;
+	}
+	&::-webkit-scrollbar-track {
+		background: var(--dark);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(var(--light_rgb), 0.2);
+		border: 0.1rem solid var(--dark);
+		border-radius: 1.6rem;
+	}
+}
+
 @mixin placeholder($color: null, $opacity: null) {
 	&::-webkit-input-placeholder {
 		color: $color;
