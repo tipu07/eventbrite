@@ -12,9 +12,9 @@ const Header = (props: any) => {
 
 	useEffect(() => {
 		const { pathname } = Router
-		if (pathname == "/player" || pathname == "/player/notifications" || pathname == "/player/booking" || pathname == "/player/tournaments" || pathname == "/player/transactions" || pathname == "/player/wishlists") {
+		if (pathname == "/player" || pathname == "/player/notifications" || pathname == "/player/booking" || pathname == "/player/booking-detail" || pathname == "/player/tournaments" || pathname == "/player/transactions" || pathname == "/player/wishlists" || pathname == "/player/messages") {
 			setHeader("player")
-		} else if (pathname == "/organizer" || pathname == "/organizer/notifications" || pathname == "/organizer/booking" || pathname == "/organizer/tournaments" || pathname == "/organizer/transactions" || pathname == "/organizer/wishlists") {
+		} else if (pathname == "/organizer" || pathname == "/organizer/notifications" || pathname == "/organizer/booking" || pathname == "/organizer/booking-detail" || pathname == "/organizer/tournaments" || pathname == "/organizer/transactions" || pathname == "/organizer/wishlists" || pathname == "/organizer/messages") {
 			setHeader("organizer")
 		} else {
 			setHeader("production")

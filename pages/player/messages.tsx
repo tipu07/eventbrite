@@ -2,6 +2,9 @@ import Header from "@/components/header/header"
 import React from "react"
 import style from "@/styles/scss/app.module.scss"
 import Footer from "@/components/footer"
+import ChatBlock from "./messages/chatBlock"
+import UserBlock from "./messages/userBlock"
+import ChatFormBlock from "./messages/chatFormBlock"
 
 const Messages = () => {
 	return (
@@ -10,8 +13,11 @@ const Messages = () => {
 			<section id={style.messages}>
 				<div className={style.contain}>
 					<div className={style.wrapper}>
-						<div className={style.users}>users</div>
-						<div className={style.content}>content</div>
+						<UserBlock />
+						<div className={style.chat_blk}>
+							<ChatBlock />
+							<ChatFormBlock />
+						</div>
 					</div>
 				</div>
 			</section>

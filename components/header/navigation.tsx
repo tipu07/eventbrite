@@ -1,7 +1,7 @@
 import Link from "next/link"
 import style from "@/styles/scss/app.module.scss"
 import { useRouter } from "next/router"
-import { IconBell, PhotoUser_01 } from "../images"
+import { IconBell, IconEnvelope, PhotoUser_01 } from "../images"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -45,6 +45,11 @@ const Navigation = (props: any) => {
 							<li>
 								<Link href="/player/notifications" className={router.pathname === "/player/notifications" ? style.active : ""}>
 									<Image width={100} height={100} src={IconBell} alt="" />
+								</Link>
+							</li>
+							<li>
+								<Link href="/player/messages" className={router.pathname === "/player/messages" ? style.active : ""}>
+									<Image width={100} height={100} src={IconEnvelope} alt="" />
 								</Link>
 							</li>
 						</ul>
