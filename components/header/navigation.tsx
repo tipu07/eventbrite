@@ -31,11 +31,6 @@ const Navigation = (props: any) => {
 								</Link>
 							</li>
 							<li>
-								<Link href="/player/transactions" className={router.pathname === "/player/transactions" ? style.active : ""}>
-									Transactions
-								</Link>
-							</li>
-							<li>
 								<Link href="/player/wishlists" className={router.pathname === "/player/wishlists" ? style.active : ""}>
 									Wishlists
 								</Link>
@@ -65,10 +60,55 @@ const Navigation = (props: any) => {
 									<Link href="/player/booking">Bookings</Link>
 								</li>
 								<li>
-									<Link href="/player/transactions">Transactions</Link>
+									<Link href="/production/signin">Sign out</Link>
+								</li>
+							</ul>
+						</div>
+					</>
+				) : headerType === "organizer" ? (
+					<>
+						<ul>
+							<li>
+								<Link href="/organizer" className={router.pathname === "/organizer" ? style.active : ""}>
+									Dashboard
+								</Link>
+							</li>
+							<li>
+								<Link href="/organizer/transactions" className={router.pathname === "/organizer/transactions" ? style.active : ""}>
+									Transactions
+								</Link>
+							</li>
+							<li>
+								<Link href="/organizer/tournaments" className={router.pathname === "/organizer/tournaments" ? style.active : ""}>
+									Tournaments
+								</Link>
+							</li>
+						</ul>
+						<ul id={style.icon_btn}>
+							<li>
+								<Link href="/organizer/notifications" className={router.pathname === "/organizer/notifications" ? style.active : ""}>
+									<Image width={100} height={100} src={IconBell} alt="" />
+								</Link>
+							</li>
+							<li>
+								<Link href="/organizer/messages" className={router.pathname === "/organizer/messages" ? style.active : ""}>
+									<Image width={100} height={100} src={IconEnvelope} alt="" />
+								</Link>
+							</li>
+						</ul>
+						<div id={style.pro_btn} className={style.dropdown}>
+							<div className={`${style.ico} ${style.fill} ${style.round}`} onClick={dropdownHandle}>
+								<Image width={100} height={100} src={PhotoUser_01} alt="" />
+							</div>
+							<ul className={`${style.dropdown_menu} ${dropdown && style.active}`}>
+								<li>
+									<Link href="/organizer">Dashboard</Link>
 								</li>
 								<li>
-									<Link href="/signin">Sign out</Link>
+									<Link href="/organizer/transactions">Transactions</Link>
+								</li>
+								<li>
+									<Link href="/production/signin">Sign out</Link>
 								</li>
 							</ul>
 						</div>
