@@ -63,7 +63,7 @@ const SignUpForm = () => {
 							</button>
 						</div>
 						<div className={style.account + " mt-2"}>
-							Already have an account? <Link href="/signin">Sign in</Link>
+							Already have an account? <Link href="/production/signin">Sign in</Link>
 						</div>
 					</div>
 				</form>

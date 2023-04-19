@@ -9,7 +9,7 @@ const BookingTopBlock = () => {
 			<div className={style.table_top_block}>
 				<div className={style.form_blk}>
 					<Image width={100} height={100} src={IconSearch} alt="" />
-					<input type="search" placeholder="Search" className={style.input} />
+					<input type="search" placeholder="Search bookings" className={style.input} />
 				</div>
 				<div className={style.btn_blk}>
 					<button type="button" className={style.site_btn}>
