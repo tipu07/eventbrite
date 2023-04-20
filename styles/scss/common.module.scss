@@ -76,7 +76,7 @@
 	cursor: pointer;
 	-webkit-transition: var(--transition);
 	transition: var(--transition);
-	@include ipad {
+	@include mobile {
 		@include flex;
 	}
 	&::before,

@@ -7,6 +7,7 @@ import { PhotoBlog01, PhotoBlog02, PhotoBlog03 } from "@/components/images"
 import { PhotoMainSlide } from "@/components/images"
 import Pagination from "@/components/pagination"
 import TopFilters from "./search/topFilters"
+import MapBlock from "./search/mapBlock"
 
 const SEARCH_RESULTS = [
 	{
@@ -159,56 +160,6 @@ const SEARCH_RESULTS = [
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
 		img: PhotoBlog01,
 	},
-	{
-		id: 16,
-		title: "Dota 2 Tournament",
-		link: "?",
-		wishlist: true,
-		tag: "esports",
-		date: "July 07, 2021",
-		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
-		img: PhotoBlog02,
-	},
-	{
-		id: 17,
-		title: "Winners on ESL Pro",
-		link: "?",
-		wishlist: false,
-		tag: "esports",
-		date: "January 31, 2021",
-		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
-		img: PhotoBlog03,
-	},
-	{
-		id: 18,
-		title: "Keep Winner DOTA",
-		link: "?",
-		wishlist: false,
-		tag: "esports",
-		date: "September 14, 2021",
-		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
-		img: PhotoMainSlide,
-	},
-	{
-		id: 19,
-		title: "White Keep Assault",
-		link: "?",
-		wishlist: true,
-		tag: "esports",
-		date: "September 14, 2021",
-		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
-		img: PhotoBlog01,
-	},
-	{
-		id: 20,
-		title: "Dota 2 Tournament",
-		link: "?",
-		wishlist: true,
-		tag: "esports",
-		date: "July 07, 2021",
-		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
-		img: PhotoBlog02,
-	},
 ]
 
 const Search = () => {
@@ -218,16 +169,23 @@ const Search = () => {
 			<section id={style.search}>
 				<div className={style.contain}>
 					<TopFilters />
-					<div className="row">
-						{SEARCH_RESULTS.map((data) => {
-							return (
-								<div className="col-lg-4" key={data.id}>
-									<CategoryCard {...data} />
-								</div>
-							)
-						})}
+					<div className={style.outer}>
+						<div className={style.items_blk}>
+							<div className="row">
+								{SEARCH_RESULTS.map((data) => {
+									return (
+										<div className="col-lg-6 col-md-12 col-sm-6" key={data.id}>
+											<CategoryCard {...data} />
+										</div>
+									)
+								})}
+							</div>
+							<Pagination />
+						</div>
+						<div className={style.map_blk}>
+							<MapBlock />
+						</div>
 					</div>
-					<Pagination />
 				</div>
 			</section>
 			<Footer />

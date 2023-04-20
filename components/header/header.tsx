@@ -9,6 +9,10 @@ import Router from "next/router"
 const Header = (props: any) => {
 	const { pageTitle } = props
 	const [header, setHeader] = useState("production")
+	const [navActive, setNavActive] = useState(false)
+	const navToggleHandle = () => {
+		setNavActive(!navActive)
+	}
 
 	useEffect(() => {
 		const { pathname } = Router
@@ -32,8 +36,11 @@ const Header = (props: any) => {
 			<header id={style.header} className={`${header !== "production" ? style.logged : ""}`}>
 				<div className={style.contain}>
 					<Logo />
+					<button type="button" className={`${style.toggle} ${navActive ? style.active : ""}`} onClick={navToggleHandle}>
+						<span></span>
+					</button>
 					{header === "production" ? <HeaderStrip /> : null}
-					<Navigation headerType={header} />
+					<Navigation headerType={header} navActive={navActive} />
 				</div>
 			</header>
 		</>
