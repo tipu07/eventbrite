@@ -6,7 +6,7 @@ import Image from "next/image"
 import { useState } from "react"
 
 const Navigation = (props: any) => {
-	const { headerType } = props
+	const { headerType, navActive } = props
 	const [dropdown, setDropdown] = useState(false)
 	const router = useRouter()
 
@@ -16,10 +16,10 @@ const Navigation = (props: any) => {
 
 	return (
 		<>
-			<nav id={style.nav}>
+			<nav id={style.nav} className={`${navActive ? style.active : ""}`}>
 				{headerType === "player" ? (
 					<>
-						<ul>
+						<ul id={style.nav_list}>
 							<li>
 								<Link href="/player" className={router.pathname === "/player" ? style.active : ""}>
 									Dashboard
@@ -67,7 +67,7 @@ const Navigation = (props: any) => {
 					</>
 				) : headerType === "organizer" ? (
 					<>
-						<ul>
+						<ul id={style.nav_list}>
 							<li>
 								<Link href="/organizer" className={router.pathname === "/organizer" ? style.active : ""}>
 									Dashboard
@@ -114,7 +114,7 @@ const Navigation = (props: any) => {
 						</div>
 					</>
 				) : (
-					<ul>
+					<ul id={style.nav_list}>
 						<li>
 							<Link href="/production" className={router.pathname === "/production" ? style.active : ""}>
 								Home

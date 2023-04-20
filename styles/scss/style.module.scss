@@ -53,11 +53,17 @@
 	-webkit-transition: var(--transition);
 	transition: var(--transition);
 	z-index: 30;
+	.contain {
+		height: inherit;
+	}
 	@at-root {
 		.header_strip {
 			@include flex(center, flex-end);
 			height: 4rem;
 			padding: 1rem 0;
+			@include mobile {
+				display: none;
+			}
 			ul {
 				@include list;
 				@include flex;
@@ -100,7 +106,7 @@
 #nav {
 	@include flex(center, flex-end);
 	height: 4rem;
-	@include ipad {
+	/* @include mobile {
 		@include pos($pos: fixed);
 		@include flex(center, flex-start, column);
 		@include gap(2rem);
@@ -118,14 +124,18 @@
 		overflow-y: auto;
 		-webkit-transition: var(--transition);
 		transition: var(--transition);
-	}
+	} */
 	header.logged & {
 		margin: 2.4rem 0;
 	}
 	&.active {
-		opacity: 1;
-		visibility: visible;
-		pointer-events: all;
+		@include mobile {
+			#nav_list {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: all;
+			}
+		}
 	}
 	> ul {
 		@include list;
@@ -147,6 +157,36 @@
 				&:hover,
 				&:focus {
 					color: var(--prime_color);
+				}
+			}
+		}
+	}
+	#nav_list {
+		@include mobile {
+			@include pos($pos: fixed);
+			@include flex(center, flex-start, column);
+			@include gap(3rem);
+			height: auto;
+			background: rgba(var(--black_rgb), 0.9);
+			padding: 5rem;
+			margin-top: 0;
+			-webkit-backdrop-filter: blur(1rem);
+			backdrop-filter: blur(1rem);
+			// border-top: 0.1rem solid var(--light_gray);
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			overflow: hidden;
+			overflow-y: auto;
+			-webkit-transition: var(--transition);
+			transition: var(--transition);
+		}
+		@include mobile {
+			@include flex($flow: column);
+			margin: 0;
+			> li {
+				@include mobile {
+					padding: 0;
 				}
 			}
 		}
@@ -197,9 +237,7 @@
 		z-index: 5;
 		@include mobile {
 			margin-left: 2rem;
-		}
-		@include mobile_xs {
-			margin-left: 1.5rem;
+			margin-right: 4rem;
 		}
 		.ico {
 			width: 3.6rem;
@@ -250,12 +288,18 @@
 				font-weight: 700;
 				text-transform: uppercase;
 				margin: 0 0 2rem;
+				@include mobile {
+					font-size: 4.6rem;
+				}
 			}
 			p {
 				color: var(--light);
 				font-size: 2.2rem;
 				font-weight: 200;
 				margin-bottom: 2rem;
+				@include mobile {
+					font-size: 1.8rem;
+				}
 			}
 		}
 	}
@@ -264,28 +308,50 @@
 		> .input {
 			color: var(--black);
 			&:nth-child(1) {
-				border-right: 0.1rem solid rgba(var(--black_rgb), 0.2);
+				border-right-color: rgba(var(--black_rgb), 0.2);
+				@include mobile_md {
+					border-bottom-color: rgba(var(--black_rgb), 0.2);
+				}
 			}
 			@include placeholder(rgba(var(--black_rgb), 0.5));
 		}
 	}
 	@at-root {
 		.main_search_form {
-			@include flex;
+			@include flex(center);
 			background: rgba(var(--light_rgb), 0.2);
 			border-radius: 0.8rem;
 			-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
 			box-shadow: 0 0.5rem 1rem 0 rgba(var(--dark_rgb), 0.35);
 			overflow: hidden;
+			@include mobile_md {
+				@include flex(center, center, column);
+			}
 			> .input {
 				-webkit-box-flex: 1;
 				-ms-flex: 1;
 				flex: 1;
 				background-color: transparent;
+				@include mobile_md {
+					-webkit-box-flex: 0;
+					-ms-flex: none;
+					flex: none;
+				}
 				&:nth-child(1) {
 					border-right: 0.1rem solid rgba(var(--light_rgb), 0.2);
 					border-top-right-radius: 0;
 					border-bottom-right-radius: 0;
+					@include mobile_md {
+						border: 0;
+						border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.2);
+						border-radius: 0;
+					}
+				}
+			}
+			> .site_btn {
+				@include mobile_md {
+					width: 100%;
+					border-radius: 0;
 				}
 			}
 		}
@@ -498,13 +564,13 @@
 	.btn_blk {
 		margin-top: 2rem;
 		&_desktop {
-			@include ipad_sm {
+			@include mobile {
 				display: none;
 			}
 		}
 		&_mobile {
 			display: none;
-			@include ipad_sm {
+			@include mobile {
 				@include flex;
 			}
 		}
@@ -786,6 +852,9 @@
 	padding: 3rem;
 	-webkit-transition: var(--transition);
 	transition: var(--transition);
+	@include ipad_sm {
+		@include flex(center, center, column);
+	}
 	&:hover {
 		background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(var(--dark_rgb), 0.8)), color-stop(50%, #540e0f), to(rgba(var(--dark_rgb), 0.8)));
 		background: linear-gradient(to right, rgba(var(--dark_rgb), 0.8) 0, #540e0f 50%, rgba(var(--dark_rgb), 0.8) 100%);
@@ -803,6 +872,9 @@
 	.teams {
 		@include flex(center);
 		margin-right: 5rem;
+		@include ipad_sm {
+			margin: 0 auto 2rem;
+		}
 		> img {
 			@include object(contain);
 			width: 5rem;
@@ -830,11 +902,21 @@
 	}
 	.txt {
 		margin-right: auto;
+		@include ipad_sm {
+			text-align: center;
+			margin: 0 auto 2rem;
+		}
 		.tags {
 			@include flex($flow: wrap);
 			@include list;
 			@include gap(0.5rem 1rem);
 			margin-bottom: 2rem;
+			@include ipad_sm {
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				margin: 0 auto;
+			}
 			> li {
 				> span {
 					display: inline-block;
@@ -851,6 +933,9 @@
 			@include flex(center);
 			color: rgba(var(--light_rgb), 0.5);
 			font-size: 1.3rem;
+			@include ipad_sm {
+				@include flex(center, center);
+			}
 			> img {
 				@include object(contain);
 				width: 1.6rem;
@@ -864,6 +949,9 @@
 	.time {
 		font-size: 4rem;
 		font-weight: 800;
+		@include ipad_sm {
+			margin: 0 auto;
+		}
 	}
 }
 
@@ -879,17 +967,24 @@
 	padding: 0;
 	margin-top: -8.8rem;
 	@include ipad_sm {
-		padding-bottom: 4rem;
+		@include flex($flow: column);
 	}
 	> * {
 		width: 50%;
 		padding: 6rem 2rem;
+		@include ipad_sm {
+			width: 100%;
+			padding: 3rem 2rem;
+		}
 	}
 	.login_sidebar {
 		position: relative;
 		min-height: 100vh;
 		@include flex(center);
 		@include bg(cover);
+		@include ipad_sm {
+			min-height: initial;
+		}
 		&::before {
 			content: "";
 			@include pos($z: 1);
@@ -903,11 +998,6 @@
 			color: var(--light);
 			margin: auto;
 			z-index: 2;
-			@include ipad_sm {
-				background: var(--light);
-				padding: 3rem;
-				margin: 0 -1.5rem 4rem;
-			}
 			.terms_list {
 				@include list;
 				@include flex($flow: wrap);
@@ -1031,7 +1121,43 @@
 	}
 	.top_head {
 		@include flex($justify: space-between);
+		@include gap(1.5rem);
 		margin-bottom: 3rem;
+		@include mobile_md {
+			@include flex($flow: column);
+		}
+	}
+	.outer {
+		@include flex;
+		@include gap(3rem);
+		@include mobile {
+			@include flex($flow: column);
+		}
+		> .map_blk {
+			position: relative;
+			width: 32rem;
+			min-width: 32rem;
+			height: 50rem;
+			min-height: 100vh;
+			border-radius: 0.8rem;
+			overflow: hidden;
+			@include mobile {
+				width: 100%;
+				min-width: initial;
+				height: 30rem;
+			}
+			> iframe {
+				@include pos;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		> .items_blk {
+			width: calc(100% - 32rem);
+			@include mobile {
+				width: 100%;
+			}
+		}
 	}
 }
 
@@ -1288,11 +1414,18 @@
 	padding: 4rem 0 8rem;
 	.table_top_block {
 		@include flex;
+		@include gap(1.5rem);
 		margin: 3rem 0 2rem;
+		@include mobile_md {
+			@include flex($flow: column);
+		}
 		.form_blk {
 			min-width: 36rem;
 			margin: 0;
 			margin-right: auto;
+			@include mobile_md {
+				min-width: 100%;
+			}
 			> img {
 				@include filter(1);
 			}
@@ -1452,7 +1585,11 @@
 		overflow: hidden;
 		.table_pagination {
 			@include flex(center, space-between);
+			@include gap(1.5rem);
 			padding: 2rem;
+			@include mobile {
+				@include flex($flow: column);
+			}
 			> * {
 				margin: 0;
 			}
@@ -1506,6 +1643,9 @@
 			@include list;
 			> li {
 				@include flex;
+				@include mobile {
+					@include flex($flow: column);
+				}
 				&:not(:nth-last-child(1)) {
 					margin-bottom: 2rem;
 				}

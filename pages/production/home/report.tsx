@@ -9,7 +9,7 @@ const Report = () => {
 			<section id={style.report}>
 				<div className={style.contain}>
 					<div className="row align-items-center">
-						<div className="col-lg-6">
+						<div className="col-lg-6 col-sm-5">
 							<div className={style.content}>
 								<h5 className={style.subheading}>Resources</h5>
 								<h2 className="h1">Sign Up for joining Tournaments</h2>
@@ -21,7 +21,7 @@ const Report = () => {
 								</div>
 							</div>
 						</div>
-						<div className="col-lg-6">
+						<div className="col-lg-6 col-sm-7">
 							<div className={style.image}>
 								<Image width={1000} height={1000} src={PhotoGallery01} alt="" />
 							</div>
