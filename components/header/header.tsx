@@ -18,7 +18,7 @@ const Header = (props: any) => {
 		const { pathname } = Router
 		if (pathname == "/player" || pathname == "/player/notifications" || pathname == "/player/booking" || pathname == "/player/booking-detail" || pathname == "/player/tournaments" || pathname == "/player/transactions" || pathname == "/player/wishlists" || pathname == "/player/messages") {
 			setHeader("player")
-		} else if (pathname == "/organizer" || pathname == "/organizer/notifications" || pathname == "/organizer/booking" || pathname == "/organizer/booking-detail" || pathname == "/organizer/tournaments" || pathname == "/organizer/transactions" || pathname == "/organizer/wishlists" || pathname == "/organizer/messages") {
+		} else if (pathname == "/organizer" || pathname == "/organizer/notifications" || pathname == "/organizer/booking" || pathname == "/organizer/booking-detail" || pathname == "/organizer/tournaments" || pathname == "/organizer/add-new-tournament" || pathname == "/organizer/transactions" || pathname == "/organizer/wishlists" || pathname == "/organizer/messages") {
 			setHeader("organizer")
 		} else {
 			setHeader("production")

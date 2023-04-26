@@ -1,4 +1,5 @@
 import React from "react"
+import style from "@/styles/scss/app.module.scss"
 
 const MapBlock = () => {
 	return (

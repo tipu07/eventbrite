@@ -163,7 +163,7 @@
 	}
 	#nav_list {
 		@include mobile {
-			@include pos($pos: fixed);
+			@include pos($pos: fixed, $z: 3);
 			@include flex(center, flex-start, column);
 			@include gap(3rem);
 			height: auto;
@@ -234,7 +234,7 @@
 		@include flex(center);
 		cursor: pointer;
 		margin-left: 3rem;
-		z-index: 5;
+		z-index: 1;
 		@include mobile {
 			margin-left: 2rem;
 			margin-right: 4rem;
@@ -965,9 +965,11 @@
 	@include flex;
 	background-size: 0;
 	padding: 0;
+	padding-left: 50%;
 	margin-top: -8.8rem;
 	@include ipad_sm {
 		@include flex($flow: column);
+		padding: 0;
 	}
 	> * {
 		width: 50%;
@@ -978,11 +980,12 @@
 		}
 	}
 	.login_sidebar {
-		position: relative;
+		@include pos($pos: fixed);
 		min-height: 100vh;
 		@include flex(center);
 		@include bg(cover);
 		@include ipad_sm {
+			position: relative;
 			min-height: initial;
 		}
 		&::before {
@@ -1017,6 +1020,7 @@
 	.logon_form {
 		-ms-flex-item-align: center;
 		align-self: center;
+		width: 100%;
 		.log_blk {
 			max-width: 50rem;
 			margin: auto;
@@ -1031,6 +1035,16 @@
 			color: var(--prime_color);
 			font-weight: 500;
 			&:hover {
+				color: var(--light);
+			}
+		}
+	}
+	.signup_as_btn_blk {
+		@include flex($flow: nowrap);
+		.input {
+			text-align: center;
+			&.active {
+				background: var(--prime_color);
 				color: var(--light);
 			}
 		}
@@ -1142,9 +1156,16 @@
 			border-radius: 0.8rem;
 			overflow: hidden;
 			@include mobile {
+				display: none;
+				@include pos($pos: fixed, $b: 7.4rem, $z: 40);
 				width: 100%;
 				min-width: initial;
-				height: 30rem;
+				height: auto;
+				min-height: initial;
+				border-radius: 0;
+				&.active {
+					display: block;
+				}
 			}
 			> iframe {
 				@include pos;
@@ -1157,6 +1178,19 @@
 			@include mobile {
 				width: 100%;
 			}
+		}
+	}
+	.map_btn_blk {
+		display: none;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--black);
+		padding: 1rem 1.5rem;
+		z-index: 12;
+		@include mobile {
+			display: block;
 		}
 	}
 }
@@ -1703,9 +1737,17 @@
 		> .user_blk {
 			width: 30rem;
 			min-width: 30rem;
+			@include mobile {
+				width: 100%;
+				min-width: initial;
+			}
 		}
 		> .chat_blk {
 			width: calc(100% - 30rem);
+			@include mobile {
+				display: none;
+				width: 100%;
+			}
 		}
 	}
 	.user_blk {
@@ -1962,5 +2004,16 @@
 				}
 			}
 		}
+	}
+}
+
+#new_tournament {
+	.blk {
+		background: var(--dark);
+		padding: 3rem;
+		border-radius: 0.8rem;
+	}
+	.contain {
+		max-width: 90rem;
 	}
 }

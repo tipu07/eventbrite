@@ -1,8 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import style from "@/styles/scss/app.module.scss"
 import Link from "next/link"
 
 const SignUpForm = () => {
+	const [signup, setSignup] = useState("organizer")
+	/* const signupHandle = () => {
+		setSignup("organizer")
+	} */
 	return (
 		<>
 			<div className={style.logon_form}>
@@ -13,6 +17,17 @@ const SignUpForm = () => {
 							<p>Just register to join with us.</p>
 						</div>
 						<div className={style.form_row + " row"}>
+							<div className="col-sm-12">
+								<h6>Sign up as</h6>
+								<div className={`${style.form_blk} ${style.btn_blk} ${style.signup_as_btn_blk}`}>
+									<button type="button" name="as_player" id="as_player" className={`${style.input} ${signup === "organizer" ? style.active : ""}`} onClick={() => setSignup("organizer")}>
+										Organizer
+									</button>
+									<button type="button" name="as_player" id="as_player" className={`${style.input} ${signup === "player" ? style.active : ""}`} onClick={() => setSignup("player")}>
+										Player
+									</button>
+								</div>
+							</div>
 							<div className="col-sm-12">
 								<h6>Full Name</h6>
 								<div className={style.form_blk}>
@@ -25,6 +40,63 @@ const SignUpForm = () => {
 									<input type="text" name="email" id="email" className={style.input} placeholder="eg: sample@gmail.com" value="" />
 								</div>
 							</div>
+							{signup === "player" ? (
+								<>
+									<div className="col-sm-12">
+										<h6>Country</h6>
+										<div className={style.form_blk}>
+											<select name="" id="" className={style.input}>
+												<option value="">Select</option>
+												<option value="232">United Kingdom</option>
+												<option value="232">United Kingdom</option>
+												<option value="232">United Kingdom</option>
+												<option value="232">United Kingdom</option>
+												<option value="232">United Kingdom</option>
+												<option value="232">United Kingdom</option>
+											</select>
+										</div>
+									</div>
+									<div className="col-sm-6">
+										<h6>City</h6>
+										<div className={style.form_blk}>
+											<input type="text" name="city" id="city" className={style.input} placeholder="eg: California" value="" />
+										</div>
+									</div>
+									<div className="col-sm-6">
+										<h6>Postal code</h6>
+										<div className={style.form_blk}>
+											<input type="text" name="zip_code" id="zip_code" className={style.input} placeholder="eg: BL0 0WY" value="" />
+										</div>
+									</div>
+									<div className="col-sm-12">
+										<h6>Address</h6>
+										<div className={style.form_blk}>
+											<input type="text" name="address" id="address" className={style.input} placeholder="eg: 123 Main Street, California" value="" />
+										</div>
+									</div>
+								</>
+							) : signup === "organizer" ? (
+								<>
+									<div className="col-sm-12">
+										<h6>Name of the Team</h6>
+										<div className={style.form_blk}>
+											<input type="text" name="address" id="address" className={style.input} placeholder="eg: Warmongers" value="" />
+										</div>
+									</div>
+									<div className="col-sm-12">
+										<h6>Names of the Players</h6>
+										<div className={style.form_blk}>
+											<input type="text" name="address" id="address" className={style.input} placeholder="John Wick" value="" />
+										</div>
+									</div>
+									<div className="col-sm-12">
+										<h6>Team Staff</h6>
+										<div className={style.form_blk}>
+											<input type="text" name="address" id="address" className={style.input} placeholder="John Wick" value="" />
+										</div>
+									</div>
+								</>
+							) : null}
 							<div className="col-sm-12">
 								<h6>Password</h6>
 								<div className="form_blk pass_blk">
