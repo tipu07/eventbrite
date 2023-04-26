@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import style from "@/styles/scss/app.module.scss"
 import Header from "@/components/header/header"
 import Footer from "@/components/footer"
@@ -163,6 +163,10 @@ const SEARCH_RESULTS = [
 ]
 
 const Search = () => {
+	const [showMap, setShowMap] = useState(false)
+	const showMapHandle = () => {
+		setShowMap(!showMap)
+	}
 	return (
 		<>
 			<Header pageTitle="Search" />
@@ -182,10 +186,15 @@ const Search = () => {
 							</div>
 							<Pagination />
 						</div>
-						<div className={style.map_blk}>
+						<div className={`${style.map_blk} ${showMap ? style.active : ""}`}>
 							<MapBlock />
 						</div>
 					</div>
+				</div>
+				<div className={style.map_btn_blk}>
+					<button type="button" className={`${style.site_btn} w-100`} onClick={showMapHandle}>
+						{!showMap ? "Show Map" : "Hide Map"}
+					</button>
 				</div>
 			</section>
 			<Footer />
