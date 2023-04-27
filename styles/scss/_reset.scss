@@ -455,3 +455,76 @@ input {
 		}
 	}
 }
+
+/*
+|----------------------------------------------------------------------
+|       Datepicker
+|----------------------------------------------------------------------
+*/
+
+.react-datepicker {
+	display: block;
+	font-size: inherit;
+	&.datepicker-dropdown {
+		min-width: 36rem;
+		border-radius: 1rem;
+	}
+	&__month-container {
+		float: none;
+	}
+	&__day,
+	&__day-name {
+		width: 100%;
+		margin: 0;
+		padding: 0.8rem;
+	}
+	&__week,
+	&__day-names {
+		@include flex;
+	}
+	&__current-month {
+		font-size: inherit;
+	}
+	&__day--selected {
+		background: var(--prime_color);
+	}
+	&__navigation {
+		top: 1rem;
+	}
+	table {
+		tr {
+			td,
+			th {
+				color: var(--dark);
+				font-size: inherit;
+				font-weight: 500;
+			}
+			td {
+				font-weight: 400;
+				&.active,
+				&:hover {
+					background-color: rgba(var(--prime_color_rgb), 0.1) !important;
+				}
+				&.active {
+					background-color: rgba(var(--prime_color_rgb), 0.8) !important;
+					color: var(--light);
+				}
+				&.today {
+					background: var(--prime_color) !important;
+					&:hover {
+						background: inherit;
+					}
+				}
+			}
+			th {
+				font-weight: 600;
+				&.datepicker-switch {
+					border-radius: 0;
+					&:hover {
+						background-color: rgba(var(--prime_color_rgb), 0.05) !important;
+					}
+				}
+			}
+		}
+	}
+}

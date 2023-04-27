@@ -1372,6 +1372,16 @@
 
 /*
 |----------------------------------------------------------------------
+|       Tournaments
+|----------------------------------------------------------------------
+*/
+
+#tournaments {
+	padding: 8rem 0;
+}
+
+/*
+|----------------------------------------------------------------------
 |       FAQ's
 |----------------------------------------------------------------------
 */
@@ -2015,5 +2025,123 @@
 	}
 	.contain {
 		max-width: 90rem;
+	}
+}
+
+#tournament_detail {
+	padding-bottom: 8rem;
+	.banner {
+		background: var(--dark);
+		padding: 5rem 0;
+		margin-bottom: 5rem;
+		.image_blk {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			@include gap(2rem);
+			margin-bottom: 4rem;
+			@include mobile {
+				grid-template-columns: auto auto;
+				@include gap(1rem);
+			}
+			.image {
+				@include img($pb: 56%);
+				border-radius: 0.8rem;
+				&:nth-child(1) {
+					grid-row: span 2;
+					grid-column: span 2;
+				}
+				&:nth-child(n + 4) {
+					display: none;
+				}
+				> img {
+					@include object($fill: true);
+				}
+			}
+		}
+		.data {
+			h2 {
+				margin-bottom: 3rem;
+			}
+			.tags_blk {
+				@include flex(center, center);
+				@include gap(1rem 2rem);
+				margin-bottom: 1rem;
+				.tag {
+					background: rgba(var(--light_rgb), 0.2);
+					color: var(--light);
+					font-size: 1.1rem;
+					line-height: 1;
+					padding: 0.4rem 1.2rem;
+					border: 0.1rem solid rgba(var(--light_rgb), 0.1);
+					border-radius: 0.4rem;
+					@include mobile {
+						font-size: 1.2rem;
+						line-height: 1.8rem;
+						padding: 0.3rem 1.2rem;
+					}
+				}
+			}
+		}
+	}
+	#overview {
+		.contain {
+			max-width: 80rem;
+		}
+		.team_list {
+			@include list;
+			@include flex(center, center, wrap);
+			@include gap(2rem);
+			&:not(:nth-last-child(1)) {
+				margin-bottom: 3rem;
+			}
+			> li {
+				> .ico {
+					width: 6rem;
+					min-width: 6rem;
+					height: 6rem;
+					border: 0.2rem solid rgba(var(--light_rgb), 0.3);
+				}
+			}
+		}
+	}
+
+	.outer {
+		@include flex;
+		> .l_side {
+			width: calc(100% - 30rem);
+		}
+		> .r_side {
+			width: 30rem;
+			min-width: 30rem;
+			padding-left: 3rem;
+		}
+	}
+	.map_blk {
+		position: relative;
+		height: 32rem;
+		border-radius: 0.8rem;
+		overflow: hidden;
+		> iframe {
+			@include pos;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.heart_btn {
+		> img {
+			@include filter(1);
+		}
+	}
+	#schedule_popup {
+		._inner {
+			max-width: 40rem;
+		}
+	}
+	.review_block_wrapper {
+		.review_block {
+			&:not(:nth-last-child(1)) {
+				margin-bottom: 2rem;
+			}
+		}
 	}
 }

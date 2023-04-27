@@ -13,7 +13,7 @@ const MATCH_CARD = [
 		team02_logo: PhotoTeam02,
 		date: "31st December 2022, 07:00",
 		time: "07:15",
-		stream_link: "?",
+		stream_link: "/production/tournament-detail",
 		tags: "all matches, latest results, upcoming",
 	},
 	{
@@ -25,7 +25,7 @@ const MATCH_CARD = [
 		team02_logo: PhotoTeam04,
 		date: "20th October 2022, 12:00",
 		time: "12:30",
-		stream_link: "?",
+		stream_link: "/production/tournament-detail",
 		tags: "all matches, latest results, upcoming",
 	},
 	{
@@ -37,7 +37,7 @@ const MATCH_CARD = [
 		team02_logo: PhotoTeam06,
 		date: "15th February 2023, 15:00",
 		time: "15:00",
-		stream_link: "?",
+		stream_link: "/production/tournament-detail",
 		tags: "all matches, latest results, upcoming",
 	},
 	{
@@ -49,7 +49,7 @@ const MATCH_CARD = [
 		team02_logo: PhotoTeam07,
 		date: "14th September 2022, 15:00",
 		time: "07:15",
-		stream_link: "?",
+		stream_link: "/production/tournament-detail",
 		tags: "all matches, latest results, upcoming",
 	},
 ]
