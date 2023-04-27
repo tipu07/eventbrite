@@ -44,6 +44,7 @@ export { default as IconEdit } from "/public/images/icon-edit.svg"
 export { default as IconTrash } from "/public/images/icon-trash.svg"
 export { default as IconAttach } from "/public/images/icon-attach.svg"
 export { default as IconEnvelope } from "/public/images/icon-envelope.svg"
+export { default as IconHeart } from "/public/images/icon-heart.svg"
 export { default as IconDownloadCsv } from "/public/images/download_csv_icon.svg"
 export { default as IconSend } from "/public/images/send_icon.svg"
 

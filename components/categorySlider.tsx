@@ -8,7 +8,7 @@ const CATEGORIES = [
 	{
 		id: 1,
 		title: "White Keep Assault",
-		link: "?",
+		link: "/production/tournament-detail",
 		tag: "esports",
 		date: "September 14, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -17,7 +17,7 @@ const CATEGORIES = [
 	{
 		id: 2,
 		title: "Dota 2 Tournament",
-		link: "?",
+		link: "/production/tournament-detail",
 		tag: "esports",
 		date: "July 07, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -26,7 +26,7 @@ const CATEGORIES = [
 	{
 		id: 3,
 		title: "Winners on ESL Pro",
-		link: "?",
+		link: "/production/tournament-detail",
 		tag: "esports",
 		date: "January 31, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -35,7 +35,7 @@ const CATEGORIES = [
 	{
 		id: 4,
 		title: "White Keep Assault",
-		link: "?",
+		link: "/production/tournament-detail",
 		tag: "esports",
 		date: "September 14, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -44,7 +44,7 @@ const CATEGORIES = [
 	{
 		id: 5,
 		title: "Dota 2 Tournament",
-		link: "?",
+		link: "/production/tournament-detail",
 		tag: "esports",
 		date: "July 07, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",
@@ -53,7 +53,7 @@ const CATEGORIES = [
 	{
 		id: 6,
 		title: "Winners on ESL Pro",
-		link: "?",
+		link: "/production/tournament-detail",
 		tag: "esports",
 		date: "January 31, 2021",
 		text: "Maecenas tempus, tellus eget rhoncus, sem quam tempus, tellus eget rhoncus vel velit auctor aliquet",

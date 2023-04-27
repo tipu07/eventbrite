@@ -13,7 +13,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 1,
 		title: "White Keep Assault",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: true,
 		tag: "esports",
 		date: "September 14, 2021",
@@ -23,7 +23,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 2,
 		title: "Dota 2 Tournament",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: true,
 		tag: "esports",
 		date: "July 07, 2021",
@@ -33,7 +33,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 3,
 		title: "Winners on ESL Pro",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "January 31, 2021",
@@ -43,7 +43,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 4,
 		title: "Keep Winner DOTA",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "September 14, 2021",
@@ -53,7 +53,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 5,
 		title: "White Keep Assault",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: true,
 		tag: "esports",
 		date: "September 14, 2021",
@@ -63,7 +63,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 6,
 		title: "Dota 2 Tournament",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: true,
 		tag: "esports",
 		date: "July 07, 2021",
@@ -73,7 +73,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 7,
 		title: "Winners on ESL Pro",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "January 31, 2021",
@@ -83,7 +83,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 8,
 		title: "Keep Winner DOTA",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "September 14, 2021",
@@ -93,7 +93,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 9,
 		title: "White Keep Assault",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: true,
 		tag: "esports",
 		date: "September 14, 2021",
@@ -103,7 +103,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 10,
 		title: "Dota 2 Tournament",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: true,
 		tag: "esports",
 		date: "July 07, 2021",
@@ -113,7 +113,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 11,
 		title: "Winners on ESL Pro",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "January 31, 2021",
@@ -123,7 +123,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 12,
 		title: "Keep Winner DOTA",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "September 14, 2021",
@@ -133,7 +133,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 13,
 		title: "Winners on ESL Pro",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "January 31, 2021",
@@ -143,7 +143,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 14,
 		title: "Keep Winner DOTA",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: false,
 		tag: "esports",
 		date: "September 14, 2021",
@@ -153,7 +153,7 @@ const SEARCH_RESULTS = [
 	{
 		id: 15,
 		title: "White Keep Assault",
-		link: "?",
+		link: "/production/tournament-detail",
 		wishlist: true,
 		tag: "esports",
 		date: "September 14, 2021",
