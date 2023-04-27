@@ -36,7 +36,7 @@ const ReviewsBlock = () => {
 						</div>
 					</div>
 					<div className={style.mid_blk}>
-						<p>It was a real pleasure working with Steve. We weren't sure whether we would sell our house and get the best price in a slow market. We met with Steve and explained our reservations and from the get-go, he was extremely patient and eased our decision-making process. We had a professional photographer at our house and within less than a week, we had offers way over our asking price.</p>
+						<p>It was a real pleasure working with Steve. We weren&lsquo;t sure whether we would sell our house and get the best price in a slow market. We met with Steve and explained our reservations and from the get-go, he was extremely patient and eased our decision-making process. We had a professional photographer at our house and within less than a week, we had offers way over our asking price.</p>
 					</div>
 					<div className={style.btm_blk}>
 						<RatingStars value={4} />
@@ -53,7 +53,7 @@ const ReviewsBlock = () => {
 						</div>
 					</div>
 					<div className={style.mid_blk}>
-						<p>First, Steve Park is very honest, friendly, and super responsive. He responded to all my emails/messages within a couple of minutes. Once you talk to him then you'll see why I'm highly suggesting it. Thanks, Steve Park. It was my pleasure to know you and thank you for the great experience.&nbsp;</p>
+						<p>First, Steve Park is very honest, friendly, and super responsive. He responded to all my emails/messages within a couple of minutes. Once you talk to him then you&lsquo;ll see why I&lsquo;m highly suggesting it. Thanks, Steve Park. It was my pleasure to know you and thank you for the great experience.&nbsp;</p>
 					</div>
 					<div className={style.btm_blk}>
 						<RatingStars value={4} />
