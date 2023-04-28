@@ -2091,6 +2091,9 @@
 			@include list;
 			@include flex(center, center, wrap);
 			@include gap(2rem);
+			@include mobile {
+				@include gap(1rem);
+			}
 			&:not(:nth-last-child(1)) {
 				margin-bottom: 3rem;
 			}
@@ -2100,6 +2103,11 @@
 					min-width: 6rem;
 					height: 6rem;
 					border: 0.2rem solid rgba(var(--light_rgb), 0.3);
+					@include mobile {
+						width: 4.6rem;
+						min-width: 4.6rem;
+						height: 4.6rem;
+					}
 				}
 			}
 		}
