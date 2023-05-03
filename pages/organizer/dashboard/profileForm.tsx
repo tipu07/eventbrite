@@ -26,45 +26,83 @@ const ProfileForm = () => {
 						</div>
 					</div>
 					<div className={`${style.form_row} row`}>
-						<div className="col-lg-4 col-6">
+						<div className="col-lg-6 col-6">
 							<h6>First Name</h6>
 							<div className={style.form_blk}>
 								<input type="text" name="" id="" value="Jennifer" className={style.input} placeholder="eg: John" />
 							</div>
 						</div>
-						<div className="col-lg-4 col-6">
+						<div className="col-lg-6 col-6">
 							<h6>Last Name</h6>
 							<div className={style.form_blk}>
 								<input type="text" name="" id="" value="Kem" className={style.input} placeholder="eg: Wick" />
 							</div>
 						</div>
-						<div className="col-lg-4 col-6">
+						<div className="col-lg-6 col-6">
 							<h6>Phone Number</h6>
 							<div className={style.form_blk}>
 								<input type="text" name="" id="" value="02077829920" className={style.input} placeholder="eg: +92300 0000 000" />
 							</div>
 						</div>
-						<div className="col-lg-4 col-6">
+						<div className="col-lg-6 col-6">
 							<h6>Email Address</h6>
 							<div className={style.form_blk}>
-								<input type="text" id="" name="" value="buyer@gmail.com" className={style.input} placeholder="eg: sample@gmail.com" />
+								<input type="text" id="" name="" value="" className={style.input} placeholder="eg: sample@gmail.com" />
 							</div>
 						</div>
-						<div className="col-lg-4 col-6">
-							<h6>Date of Birth</h6>
+					</div>
+					<hr className="my-5" />
+					<h4 className="mb-4">Organization information</h4>
+					<div className={`${style.form_row} row`}>
+						<div className="col-lg-6 col-6">
+							<h6>Organization Name</h6>
 							<div className={style.form_blk}>
-								<input type="text" name="" id="" value="12-31-1969" className={style.input} placeholder="eg: 01-01-1998" />
+								<input type="text" name="address" id="address" className={style.input} placeholder="eg: Warmongers" value="" />
+							</div>
+						</div>
+						<div className="col-lg-6 col-6">
+							<h6>Organization Website</h6>
+							<div className={style.form_blk}>
+								<input type="text" name="address" id="address" className={style.input} placeholder="eg: www.website.com" value="" />
 							</div>
 						</div>
 						<div className="col-lg-4 col-6">
-							<h6>Gender</h6>
+							<h6>Mailing Address</h6>
+							<div className={style.form_blk}>
+								<input type="text" name="address" id="address" className={style.input} placeholder="eg: sample@gmail.com" value="" />
+							</div>
+						</div>
+						<div className="col-lg-4 col-6">
+							<h6>Preferred Communication Method</h6>
 							<div className={style.form_blk}>
 								<select name="" id="" className={style.input}>
 									<option value="">Select</option>
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-									<option value="others">Others</option>
+									<option value="email">Email</option>
+									<option value="phone">Phone</option>
+									<option value="messaging app">Messaging App</option>
 								</select>
+							</div>
+						</div>
+						<div className="col-lg-4 col-6">
+							<h6>Time Zone</h6>
+							<div className={style.form_blk}>
+								<input type="text" name="address" id="address" className={style.input} placeholder="eg: EEST" value="" />
+							</div>
+						</div>
+					</div>
+					<hr className="my-5" />
+					<h4 className="mb-4">Secondary contact information</h4>
+					<div className={`${style.form_row} row`}>
+						<div className="col-lg-6 col-6">
+							<h6>Phone Number</h6>
+							<div className={style.form_blk}>
+								<input type="text" name="" id="" value="" className={style.input} placeholder="eg: +92300 0000 000" />
+							</div>
+						</div>
+						<div className="col-lg-6 col-6">
+							<h6>Email Address</h6>
+							<div className={style.form_blk}>
+								<input type="text" id="" name="" value="" className={style.input} placeholder="eg: sample@gmail.com" />
 							</div>
 						</div>
 					</div>
@@ -116,6 +154,34 @@ const ProfileForm = () => {
 							<h6>Address</h6>
 							<div className={style.form_blk}>
 								<input type="text" id="" name="" value="" className={style.input} placeholder="eg: 123 Main Street, California" />
+							</div>
+						</div>
+					</div>
+					<hr className="my-5" />
+					<h4 className="mb-4">Social Media Handles</h4>
+					<div className={`${style.form_row} row`}>
+						<div className="col-lg-6 col-6">
+							<h6>Facebook</h6>
+							<div className={style.form_blk}>
+								<input type="text" id="" name="" value="" className={style.input} placeholder="eg: www.facebook.com" />
+							</div>
+						</div>
+						<div className="col-lg-6 col-6">
+							<h6>Twitter</h6>
+							<div className={style.form_blk}>
+								<input type="text" id="" name="" value="" className={style.input} placeholder="eg: www.twitter.com" />
+							</div>
+						</div>
+						<div className="col-lg-6 col-6">
+							<h6>Instagram</h6>
+							<div className={style.form_blk}>
+								<input type="text" id="" name="" value="" className={style.input} placeholder="eg: www.instagram.com" />
+							</div>
+						</div>
+						<div className="col-lg-6 col-6">
+							<h6>LinkedIn</h6>
+							<div className={style.form_blk}>
+								<input type="text" id="" name="" value="" className={style.input} placeholder="eg: www.linkedin.com" />
 							</div>
 						</div>
 					</div>

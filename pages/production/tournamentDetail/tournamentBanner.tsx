@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import style from "@/styles/scss/app.module.scss"
-import { IconHeart, PhotoAbout, PhotoBlog02, PhotoMainSlide } from "@/components/images"
+import { IconHeart, PhotoAbout, PhotoBlog02, PhotoMainSlide, PhotoTeam01 } from "@/components/images"
 import Image from "next/image"
-import SchedulePopup from "./schedulePopup"
+import AddTeamPopup from "./addTeamPopup"
 
 const TournamentBanner = () => {
-	const [schedulePopup, setSchedulePopup] = useState(false)
-	const schedulePopuphandle = () => {
-		setSchedulePopup(!schedulePopup)
+	const [addTeamPopup, setAddTeamPopup] = useState(false)
+	const addTeamPopupHandle = () => {
+		setAddTeamPopup(!addTeamPopup)
 	}
 	return (
 		<>
@@ -24,24 +24,36 @@ const TournamentBanner = () => {
 							<Image width={1000} height={1000} src={PhotoMainSlide} alt="" />
 						</div>
 					</div>
-					<div className={`${style.data} text-center`}>
-						<div className={style.tags_blk}>
-							<strong className={style.text_prime}>Tournament</strong>
-							<span className={style.tag}>esport</span>
+					<div className={style.data}>
+						<div className={style.data_logo}>
+							<Image width={200} height={200} src={PhotoTeam01} alt="Team Logo" />
 						</div>
-						<h2>151 Hollow Tree, Irvine, CA 92618</h2>
-						<div className={`${style.btn_blk} justify-content-center`}>
-							<button className={`${style.site_btn} ${style.heart_btn}`}>
-								<Image width={40} height={40} src={IconHeart} alt="Heart" /> Add to wishlist
-							</button>
-							<button type="button" className={`${style.site_btn} ${style.simple}`} onClick={schedulePopuphandle}>
-								Schedule Showing
-							</button>
+						<div className={style.data_text}>
+							<div className={style.tags_blk}>
+								<strong className={style.text_prime}>Double Elimination</strong>
+								<span className={style.tag}>Sport</span>
+							</div>
+							<h2>Dota 2 Tournament Keep Assault</h2>
+							<div className={`${style.btn_blk} align-items-center`}>
+								<button type="button" className={style.site_btn} onClick={addTeamPopupHandle}>
+									Add your Team
+								</button>
+								<button className={style.heart_btn}>
+									<Image width={40} height={40} src={IconHeart} alt="Heart" /> Add to wishlist
+								</button>
+							</div>
+							<ul className={style.date_time_list}>
+								<li>Start Date: 03 May, 2023</li>
+								<li>●</li>
+								<li>End Date: 03 May, 2023</li>
+								<li>●</li>
+								<li>Time: 04:00 PM</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			{schedulePopup ? <SchedulePopup popupClose={schedulePopuphandle} /> : null}
+			{addTeamPopup ? <AddTeamPopup popupClose={addTeamPopupHandle} /> : null}
 		</>
 	)
 }
