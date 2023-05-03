@@ -2022,6 +2022,9 @@
 		background: var(--dark);
 		padding: 3rem;
 		border-radius: 0.8rem;
+		hr {
+			margin: 2rem 0;
+		}
 	}
 	.contain {
 		max-width: 90rem;
@@ -2058,12 +2061,24 @@
 				}
 			}
 		}
-		.data {
+	}
+	.data {
+		@include flex;
+		max-width: 80rem;
+		margin: auto;
+		> &_logo {
+			@include object(contain);
+			width: 10rem;
+			min-width: 10rem;
+			height: 10rem;
+			margin-right: 2rem;
+		}
+		> &_text {
 			h2 {
-				margin-bottom: 3rem;
+				margin-bottom: 2rem;
 			}
 			.tags_blk {
-				@include flex(center, center);
+				@include flex(center);
 				@include gap(1rem 2rem);
 				margin-bottom: 1rem;
 				.tag {
@@ -2081,32 +2096,59 @@
 					}
 				}
 			}
+			.date_time_list {
+				@include list;
+				@include flex(center, $flow: wrap);
+				@include gap(2rem);
+				margin-top: 2rem;
+				> li {
+					opacity: 0.5;
+				}
+			}
 		}
 	}
 	#overview {
 		.contain {
 			max-width: 80rem;
 		}
+		.team_block {
+			@include flex;
+			&:not(:nth-last-child(1)) {
+				margin-bottom: 2rem;
+				padding-bottom: 2rem;
+				border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.1);
+			}
+			.icon {
+				width: 8rem;
+				min-width: 8rem;
+				height: 8rem;
+				margin-right: 2rem;
+			}
+		}
 		.team_list {
 			@include list;
-			@include flex(center, center, wrap);
-			@include gap(2rem);
-			@include mobile {
-				@include gap(1rem);
-			}
-			&:not(:nth-last-child(1)) {
-				margin-bottom: 3rem;
-			}
 			> li {
-				> .ico {
-					width: 6rem;
-					min-width: 6rem;
-					height: 6rem;
-					border: 0.2rem solid rgba(var(--light_rgb), 0.3);
-					@include mobile {
-						width: 4.6rem;
-						min-width: 4.6rem;
-						height: 4.6rem;
+				@include flex(center, $flow: wrap);
+				@include gap(1rem);
+				&:not(:nth-last-child(1)) {
+					margin-bottom: 1rem;
+				}
+				> span {
+					opacity: 0.5;
+				}
+			}
+			&_member {
+				@include list;
+				@include flex;
+				> li {
+					&:not(:nth-child(1)) {
+						margin-left: -2rem;
+					}
+					> .ico {
+						width: 4rem;
+						min-width: 4rem;
+						height: 4rem;
+						border: 0.2rem solid rgba(var(--light_rgb), 0.3);
 					}
 				}
 			}
@@ -2136,13 +2178,22 @@
 		}
 	}
 	.heart_btn {
+		@include flex;
+		color: var(--light);
+		&:hover {
+			color: var(--prime_color);
+		}
 		> img {
+			width: 2rem;
+			min-width: 2rem;
+			height: 2rem;
+			margin-right: 0.5rem;
 			@include filter(1);
 		}
 	}
-	#schedule_popup {
+	#add_team_popup {
 		._inner {
-			max-width: 40rem;
+			max-width: 80rem;
 		}
 	}
 	.review_block_wrapper {

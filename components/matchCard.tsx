@@ -5,23 +5,16 @@ import { IconCalendar, PhotoVS } from "./images"
 import Link from "next/link"
 
 const MatchCard = (props: any) => {
-	const { title, team01, team01_logo, team02, team02_logo, date, time, stream_link, tags } = props
+	const { title, team, team_logo, date, time, stream_link, tags } = props
 	return (
 		<>
 			<div className={style.match_card}>
 				<div className={style.teams}>
 					<div className={style.member}>
 						<div className={style.icon}>
-							<Image width={400} height={400} src={team01_logo} alt="" />
+							<Image width={400} height={400} src={team_logo} alt="" />
 						</div>
-						<div className={style.name}>{team01}</div>
-					</div>
-					<Image width={400} height={400} src={PhotoVS} alt="" />
-					<div className={style.member}>
-						<div className={style.icon}>
-							<Image width={400} height={400} src={team02_logo} alt="" />
-						</div>
-						<div className={style.name}>{team02}</div>
+						<div className={style.name}>{team}</div>
 					</div>
 				</div>
 				<div className={style.txt}>
