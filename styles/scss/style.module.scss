@@ -1678,6 +1678,13 @@
 				border-radius: 0.3rem;
 			}
 		}
+		tr {
+			a {
+				&:not(:hover) {
+					color: var(--light);
+				}
+			}
+		}
 	}
 	.detail_blk {
 		background: var(--dark);
