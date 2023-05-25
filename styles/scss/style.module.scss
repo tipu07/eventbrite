@@ -2211,3 +2211,21 @@
 		}
 	}
 }
+
+.address_block {
+	background: var(--black);
+	max-height: 20rem;
+	overflow: hidden;
+	border-radius: 0.8rem;
+	margin-top: 0.2rem;
+	> ul {
+		@include list;
+		max-height: inherit;
+		overflow: hidden;
+		overflow-y: auto;
+		> li {
+			padding: 1rem 1.6rem;
+			border-bottom: 0.1rem solid rgba(var(--light_rgb), 0.05);
+		}
+	}
+}
