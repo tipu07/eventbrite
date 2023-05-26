@@ -47,6 +47,8 @@ export { default as IconEnvelope } from "/public/images/icon-envelope.svg"
 export { default as IconHeart } from "/public/images/icon-heart.svg"
 export { default as IconDownloadCsv } from "/public/images/download_csv_icon.svg"
 export { default as IconSend } from "/public/images/send_icon.svg"
+export { default as IconMap } from "/public/images/icon-map.svg"
+export { default as IconList } from "/public/images/icon-list.svg"
 
 export { default as VectorPaypal } from "/public/images/paypal.svg"
 export { default as VectorVisa } from "/public/images/visa.svg"

@@ -1,6 +1,8 @@
 import React from "react"
 import style from "@/styles/scss/app.module.scss"
 import MainSearch from "@/components/mainSearch"
+import Image from "next/image"
+import { IconList, IconMap } from "@/components/images"
 
 const TopFilters = () => {
 	return (
@@ -18,6 +20,14 @@ const TopFilters = () => {
 						<option value="">Oldest Listings</option>
 						<option value="">Closest</option>
 					</select>
+					<div className={style.sort_list_btn}>
+						<button type="button" className={style.active}>
+							<Image width={100} height={100} src={IconList} alt="" />
+						</button>
+						<button type="button">
+							<Image width={100} height={100} src={IconMap} alt="" />
+						</button>
+					</div>
 				</div>
 			</div>
 		</>
